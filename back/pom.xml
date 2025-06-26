@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>bio.anode.ale</groupId>
+	<artifactId>back</artifactId>
+	<version>0.0.1</version>
+    <properties>
+        <slf4j.version>2.0.9</slf4j.version>
+        <logback.version>1.3.0-alpha16</logback.version>
+         <!-- gRPC related dependencies -->
+         <grpc.version>1.61.1</grpc.version>
+         <protobuf.version>3.25.1</protobuf.version>
+         <protoc.maven.version>3.11.4</protoc.maven.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>central</id>
+            <name>Maven Central Repository</name>
+            <url>https://repo.maven.apache.org/maven2</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>dtim-jmdns</id>
+            <name>dtim jmdns</name>
+            <url>https://raw.githubusercontent.com/QTimort/jmdns/maven2</url>
+        </repository>
+    </repositories>
+
+
+    <dependencies>
+                <!-- gRPC/Protobuf -->
+                <dependency>
+                    <groupId>com.google.protobuf</groupId>
+                    <artifactId>protobuf-java</artifactId>
+                    <version>${protobuf.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.google.protobuf</groupId>
+                    <artifactId>protobuf-java-util</artifactId>
+                    <version>${protobuf.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.google.protobuf</groupId>
+                    <artifactId>protoc</artifactId>
+                    <version>${protobuf.version}</version>
+                    <type>pom</type>
+                </dependency>
+                <dependency>
+                    <groupId>io.grpc</groupId>
+                    <artifactId>grpc-core</artifactId>
+                    <version>${grpc.version}</version>
+                </dependency>
+    
+        <!-- SiLA Dependencies -->
+        <dependency>
+            <groupId>org.sila-standard.sila_java.library</groupId>
+            <artifactId>server_base</artifactId>
+            <version>0.14.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.sila-standard.sila_java.library</groupId>
+            <artifactId>manager</artifactId>
+            <version>0.14.0</version>
+        </dependency>
+
+        <!-- Logging -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>bio.anode.sila</groupId>
+                <artifactId>plugin</artifactId>
+                <version>0.14.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <features>
+                                <param>${build.resource.dir}/GreetingProvider-v1_0.sila.xml</param>
+                            </features>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

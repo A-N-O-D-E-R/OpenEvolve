@@ -1,0 +1,1078 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topologie identifiant="-21918" version="2" nom="topologie">
+    <chambre-usage identifiant="-21919" nom="Chamber 1" orientation="1" volume-culture="14.745" volume-total="80.0" location="85 535">
+            <chambre identifiant="-21920" version="2" serie="794" volume="16.0">
+                    <modele identifiant="10" nom="Chambre Genoscope-1" class="bio.anode.ale.core.composant.Chambre"/>
+            </chambre>
+            <regulateur-usage identifiant="-21921" nom="Regulator Chamber 1" adresse="/dev/ttyUSB-P0:/dev/ttyUSB0;0;DB73.34;20;15;0;75" accessible="true" sonde="-21923">
+                    <regulateur identifiant="-21922" version="2" serie="796" connecteur="fr.cns.laferme.control.connector.RegulateurS7PConnector" unite="?C" minimum="20.0" maximum="45.0" analog="true" correction-factor="1.0">
+                            <modele identifiant="24" nom="Siemens temperature regulator" default-connector="fr.cns.laferme.control.connector.RegulateurS7PConnector" class="bio.anode.ale.core.composant.Regulateur"/>
+                    </regulateur>
+            </regulateur-usage>
+            <thermometre-usage identifiant="-21923" nom="Thermometer Chamber 1" adresse="/dev/ttyUSB-P0:/dev/ttyUSB0;0;DB73.4" accessible="true" frequence-de-mise-a-jour="10000" sensibilite="0.1" alerte="5.0" mesure="30.1" derniere-mesure="2025-06-23 19:58:12.586 +0200" delta-erreur="1.1" installed="true">
+                    <thermometre identifiant="-21924" version="-1" serie="-20027" connecteur="fr.cns.laferme.control.connector.ThermometreS7PConnector" unite="?C">
+                            <modele identifiant="18" nom="Siemens thermometer" default-connector="fr.cns.laferme.control.connector.ThermometreS7PConnector" class="bio.anode.ale.core.composant.Thermometre"/>
+                    </thermometre>
+            </thermometre-usage>
+            <turbidimetre-usage identifiant="-21925" nom="Turbidimeter Chamber 1" adresse="/dev/ttyUSB-P0:/dev/ttyUSB0;0;DB7.2;DB7.6;DB7.0" accessible="true" frequence-de-mise-a-jour="5000" sensibilite="1.0" mesure="80.0" derniere-mesure="2025-06-23 19:58:17.578 +0200" delta-erreur="0.0" installed="true">
+                    <turbidimetre identifiant="-21926" version="2" serie="798" connecteur="fr.cns.laferme.control.connector.TurbidimetreS7PConnector" unite="">
+                            <modele identifiant="9" nom="Turbidimetre Genoscope-1" default-connector="fr.cns.laferme.control.connector.TurbidimetreS7PConnector" class="bio.anode.ale.core.composant.Turbidimetre"/>
+                    </turbidimetre>
+            </turbidimetre-usage>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 0" length="0.0" source="-21919" cible="-21941"/>
+            <connection connecteur-source="0" connecteur-cible="0" points="0 2" length="0.0" source="-21919" cible="-21935"/>
+            <connection connecteur-source="2" connecteur-cible="0" points="2 55 565 2" length="0.0" source="-21919" cible="-21933"/>
+            <connection connecteur-source="3" connecteur-cible="0" points="3 0" length="0.0" source="-21919" cible="-21939"/>
+    </chambre-usage>
+    <vanne-usage identifiant="-21927" nom="O1111" adresse="2-2-6" active="false" location="60 505">
+            <vanne-no identifiant="-21928" version="2" serie="800">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-no>
+            <connection connecteur-source="0" connecteur-cible="1" points="0 1" length="0.0" source="-21927" cible="-21947"/>
+            <connection connecteur-source="1" connecteur-cible="1" points="1 1" length="0.0" source="-21927" cible="-21939"/>
+    </vanne-usage>
+    <vanne-usage identifiant="-21929" nom="X1113" adresse="2-3-0" active="false" location="125 550">
+            <vanne-nf identifiant="-21930" version="2" serie="802">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+            <connection connecteur-source="1" connecteur-cible="1" points="3 1" length="0.0" source="-21929" cible="-21941"/>
+            <connection connecteur-source="0" connecteur-cible="2" points="2 2" length="0.0" source="-21929" cible="-21943"/>
+    </vanne-usage>
+    <vanne-usage identifiant="-21931" nom="X1112" adresse="2-2-7" active="false" location="100 470">
+            <vanne-nf identifiant="-21932" version="2" serie="804">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+            <connection connecteur-source="1" connecteur-cible="2" points="3 2" length="0.0" source="-21931" cible="-21939"/>
+            <connection connecteur-source="0" connecteur-cible="0" points="2 0" length="0.0" source="-21931" cible="-21943"/>
+    </vanne-usage>
+    <vanne-usage identifiant="-21933" nom="X1114" adresse="2-3-1" active="false" location="40 625">
+            <vanne-nf identifiant="-21934" version="2" serie="806">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+            <connection connecteur-source="1" connecteur-cible="1" points="3 55 710 1" length="0.0" source="-21933" cible="-21937"/>
+            <connection connecteur-source="0" connecteur-cible="2" points="2 55 565 2" length="0.0" source="-21933" cible="-21919"/>
+    </vanne-usage>
+    <vanne-usage identifiant="-21935" nom="X1115" adresse="2-3-2" active="false" location="70 670">
+            <vanne-nf identifiant="-21936" version="2" serie="808">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+            <connection connecteur-source="0" connecteur-cible="0" points="2 0" length="0.0" source="-21935" cible="-21919"/>
+            <connection connecteur-source="1" connecteur-cible="2" points="3 2" length="0.0" source="-21935" cible="-21937"/>
+    </vanne-usage>
+    <jonction-usage identifiant="-21937" nom="T" orientation="8" location="70 700">
+            <jonction identifiant="-21938" version="2" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="2" connecteur-cible="1" points="2 3" length="0.0" source="-21937" cible="-21935"/>
+            <connection connecteur-source="1" connecteur-cible="1" points="1 55 710 3" length="0.0" source="-21937" cible="-21933"/>
+            <connection connecteur-source="0" connecteur-cible="2" points="0 2" length="0.0" source="-21937" cible="-21979"/>
+    </jonction-usage>
+    <jonction-usage identifiant="-21939" nom="T" orientation="8" location="100 505">
+            <jonction identifiant="-21940" version="2" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="0" connecteur-cible="3" points="0 3" length="0.0" source="-21939" cible="-21919"/>
+            <connection connecteur-source="1" connecteur-cible="1" points="1 1" length="0.0" source="-21939" cible="-21927"/>
+            <connection connecteur-source="2" connecteur-cible="1" points="2 3" length="0.0" source="-21939" cible="-21931"/>
+    </jonction-usage>
+    <jonction-usage identifiant="-21941" nom="T" orientation="1" location="125 615">
+            <jonction identifiant="-21942" version="2" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="0" connecteur-cible="1" points="0 1" length="0.0" source="-21941" cible="-21919"/>
+            <connection connecteur-source="1" connecteur-cible="1" points="1 3" length="0.0" source="-21941" cible="-21929"/>
+            <connection connecteur-source="2" connecteur-cible="0" points="2 0" length="0.0" source="-21941" cible="-21985"/>
+    </jonction-usage>
+    <jonction-usage identifiant="-21943" nom="T" orientation="1" location="115 440">
+            <jonction identifiant="-21944" version="2" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="2" connecteur-cible="0" points="2 2" length="0.0" source="-21943" cible="-21929"/>
+            <connection connecteur-source="0" connecteur-cible="0" points="0 2" length="0.0" source="-21943" cible="-21931"/>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 0" length="0.0" source="-21943" cible="-22057"/>
+    </jonction-usage>
+    <source-usage identifiant="-21945" nom="A" debit="0.0" volume-restant="0.0" auto-remplissage="false" line-type="SILICONE_10L" location="200 615">
+            <source identifiant="-21946" version="2" serie="821" type="AIR">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </source>
+            <connection connecteur-source="0" connecteur-cible="1" points="0 1" length="0.0" source="-21945" cible="-21985"/>
+    </source-usage>
+    <evacuation-usage identifiant="-21947" nom="W" location="25 505">
+            <evacuation identifiant="-21948" version="2" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </evacuation>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 0" length="0.0" source="-21947" cible="-21927"/>
+    </evacuation-usage>
+    <chambre-usage identifiant="-21949" nom="Chamber 2" orientation="1" volume-culture="13.815" volume-total="80.0" location="275 535">
+            <chambre identifiant="-21950" version="2" serie="826" volume="16.0">
+                    <modele identifiant="10" nom="Chambre Genoscope-1" class="bio.anode.ale.core.composant.Chambre"/>
+            </chambre>
+            <regulateur-usage identifiant="-21951" nom="Regulator Chamber 2" adresse="/dev/ttyUSB-P0:/dev/ttyUSB0;0;DB72.34;20;15;0;75" accessible="true" sonde="-21953">
+                    <regulateur identifiant="-21952" version="2" serie="828" connecteur="fr.cns.laferme.control.connector.RegulateurS7PConnector" unite="?C" minimum="20.0" maximum="45.0" analog="true" correction-factor="1.0">
+                            <modele identifiant="24" nom="Siemens temperature regulator" default-connector="fr.cns.laferme.control.connector.RegulateurS7PConnector" class="bio.anode.ale.core.composant.Regulateur"/>
+                    </regulateur>
+            </regulateur-usage>
+            <thermometre-usage identifiant="-21953" nom="Thermometer Chamber 2" adresse="/dev/ttyUSB-P0:/dev/ttyUSB0;0;DB72.4" accessible="true" frequence-de-mise-a-jour="10000" sensibilite="0.1" alerte="5.0" mesure="30.0" derniere-mesure="2025-06-23 19:58:17.834 +0200" delta-erreur="0.9" installed="true">
+                    <thermometre identifiant="-21954" version="-1" serie="-20055" connecteur="fr.cns.laferme.control.connector.ThermometreS7PConnector" unite="?C">
+                            <modele identifiant="18" nom="Siemens thermometer" default-connector="fr.cns.laferme.control.connector.ThermometreS7PConnector" class="bio.anode.ale.core.composant.Thermometre"/>
+                    </thermometre>
+            </thermometre-usage>
+            <turbidimetre-usage identifiant="-21955" nom="Turbidimeter Chamber 2" adresse="/dev/ttyUSB-P0:/dev/ttyUSB0;0;DB7.20;DB7.24;DB7.18" accessible="true" frequence-de-mise-a-jour="5000" sensibilite="1.0" mesure="38.0" derniere-mesure="2025-06-23 19:58:18.937 +0200" delta-erreur="0.0" installed="true">
+                    <turbidimetre identifiant="-21956" version="2" serie="830" connecteur="fr.cns.laferme.control.connector.TurbidimetreS7PConnector" unite="">
+                            <modele identifiant="9" nom="Turbidimetre Genoscope-1" default-connector="fr.cns.laferme.control.connector.TurbidimetreS7PConnector" class="bio.anode.ale.core.composant.Turbidimetre"/>
+                    </turbidimetre>
+            </turbidimetre-usage>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 0" length="0.0" source="-21949" cible="-21963"/>
+            <connection connecteur-source="0" connecteur-cible="0" points="0 2" length="0.0" source="-21949" cible="-21969"/>
+            <connection connecteur-source="3" connecteur-cible="0" points="3 0" length="0.0" source="-21949" cible="-21971"/>
+            <connection connecteur-source="2" connecteur-cible="0" points="2 245 565 2" length="0.0" source="-21949" cible="-21977"/>
+    </chambre-usage>
+    <vanne-usage identifiant="-21957" nom="X1123" adresse="2-2-1" active="false" location="315 550">
+            <vanne-nf identifiant="-21958" version="2" serie="832">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+            <connection connecteur-source="1" connecteur-cible="1" points="3 1" length="0.0" source="-21957" cible="-21963"/>
+            <connection connecteur-source="0" connecteur-cible="2" points="2 2" length="0.0" source="-21957" cible="-21967"/>
+    </vanne-usage>
+    <vanne-usage identifiant="-21959" nom="O1121" adresse="2-1-7" active="false" location="250 505">
+            <vanne-no identifiant="-21960" version="2" serie="834">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-no>
+            <connection connecteur-source="0" connecteur-cible="1" points="0 1" length="0.0" source="-21959" cible="-21975"/>
+            <connection connecteur-source="1" connecteur-cible="1" points="1 1" length="0.0" source="-21959" cible="-21971"/>
+    </vanne-usage>
+    <jonction-usage identifiant="-21961" nom="T" orientation="8" location="260 700">
+            <jonction identifiant="-21962" version="2" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="1" connecteur-cible="1" points="1 245 710 3" length="0.0" source="-21961" cible="-21977"/>
+            <connection connecteur-source="2" connecteur-cible="1" points="2 3" length="0.0" source="-21961" cible="-21969"/>
+            <connection connecteur-source="0" connecteur-cible="0" points="0 0" length="0.0" source="-21961" cible="-21979"/>
+    </jonction-usage>
+    <jonction-usage identifiant="-21963" nom="T" orientation="1" location="315 615">
+            <jonction identifiant="-21964" version="2" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="0" connecteur-cible="1" points="0 1" length="0.0" source="-21963" cible="-21949"/>
+            <connection connecteur-source="1" connecteur-cible="1" points="1 3" length="0.0" source="-21963" cible="-21957"/>
+            <connection connecteur-source="2" connecteur-cible="0" points="2 0" length="0.0" source="-21963" cible="-21983"/>
+    </jonction-usage>
+    <source-usage identifiant="-21965" nom="A" debit="0.0" volume-restant="0.0" auto-remplissage="false" line-type="SILICONE_10L" location="390 615">
+            <source identifiant="-21966" version="2" serie="841" type="AIR">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </source>
+            <connection connecteur-source="0" connecteur-cible="1" points="0 1" length="0.0" source="-21965" cible="-21983"/>
+    </source-usage>
+    <jonction-usage identifiant="-21967" nom="T" orientation="1" location="305 440">
+            <jonction identifiant="-21968" version="2" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="2" connecteur-cible="0" points="2 2" length="0.0" source="-21967" cible="-21957"/>
+            <connection connecteur-source="0" connecteur-cible="0" points="0 2" length="0.0" source="-21967" cible="-21973"/>
+            <connection connecteur-source="1" connecteur-cible="2" points="1 2" length="0.0" source="-21967" cible="-22057"/>
+    </jonction-usage>
+    <vanne-usage identifiant="-21969" nom="X1125" adresse="2-1-6" active="false" location="260 670">
+            <vanne-nf identifiant="-21970" version="2" serie="844">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+            <connection connecteur-source="0" connecteur-cible="0" points="2 0" length="0.0" source="-21969" cible="-21949"/>
+            <connection connecteur-source="1" connecteur-cible="2" points="3 2" length="0.0" source="-21969" cible="-21961"/>
+    </vanne-usage>
+    <jonction-usage identifiant="-21971" nom="T" orientation="8" location="290 505">
+            <jonction identifiant="-21972" version="2" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="0" connecteur-cible="3" points="0 3" length="0.0" source="-21971" cible="-21949"/>
+            <connection connecteur-source="1" connecteur-cible="1" points="1 1" length="0.0" source="-21971" cible="-21959"/>
+            <connection connecteur-source="2" connecteur-cible="1" points="2 3" length="0.0" source="-21971" cible="-21973"/>
+    </jonction-usage>
+    <vanne-usage identifiant="-21973" nom="X1122" adresse="2-2-0" active="false" location="290 470">
+            <vanne-nf identifiant="-21974" version="2" serie="848">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+            <connection connecteur-source="1" connecteur-cible="2" points="3 2" length="0.0" source="-21973" cible="-21971"/>
+            <connection connecteur-source="0" connecteur-cible="0" points="2 0" length="0.0" source="-21973" cible="-21967"/>
+    </vanne-usage>
+    <evacuation-usage identifiant="-21975" nom="W" location="215 505">
+            <evacuation identifiant="-21976" version="2" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </evacuation>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 0" length="0.0" source="-21975" cible="-21959"/>
+    </evacuation-usage>
+    <vanne-usage identifiant="-21977" nom="X1124" adresse="2-2-2" active="false" location="230 625">
+            <vanne-nf identifiant="-21978" version="2" serie="852">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+            <connection connecteur-source="1" connecteur-cible="1" points="3 245 710 1" length="0.0" source="-21977" cible="-21961"/>
+            <connection connecteur-source="0" connecteur-cible="2" points="2 245 565 2" length="0.0" source="-21977" cible="-21949"/>
+    </vanne-usage>
+    <jonction-usage identifiant="-21979" nom="T" orientation="4" location="165 710">
+            <jonction identifiant="-21980" version="2" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="2" connecteur-cible="0" points="2 0" length="0.0" source="-21979" cible="-21937"/>
+            <connection connecteur-source="0" connecteur-cible="0" points="0 0" length="0.0" source="-21979" cible="-21961"/>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 2" length="0.0" source="-21979" cible="-22053"/>
+    </jonction-usage>
+    <piege-usage identifiant="-21981" nom="Piege" orientation="1" location="490 695">
+            <piege identifiant="-21982" version="2" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </piege>
+            <connection connecteur-source="0" connecteur-cible="1" points="0 1" length="0.0" source="-21981" cible="-22061"/>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 0" length="0.0" source="-21981" cible="-22163"/>
+    </piege-usage>
+    <vanne-usage identifiant="-21983" nom="O1126" adresse="2-2-3" active="false" location="345 615">
+            <vanne-no identifiant="-21984" version="-1" serie="942">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-no>
+            <connection connecteur-source="0" connecteur-cible="2" points="0 2" length="0.0" source="-21983" cible="-21963"/>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 0" length="0.0" source="-21983" cible="-21965"/>
+    </vanne-usage>
+    <vanne-usage identifiant="-21985" nom="O1116" adresse="2-2-5" active="false" location="155 615">
+            <vanne-no identifiant="-21986" version="-1" serie="944">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-no>
+            <connection connecteur-source="0" connecteur-cible="2" points="0 2" length="0.0" source="-21985" cible="-21941"/>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 0" length="0.0" source="-21985" cible="-21945"/>
+    </vanne-usage>
+    <jonction-usage identifiant="-21987" nom="T" orientation="1" location="915 440">
+            <jonction identifiant="-21988" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="0" connecteur-cible="0" points="0 2" length="0.0" source="-21987" cible="-22013"/>
+            <connection connecteur-source="2" connecteur-cible="0" points="2 2" length="0.0" source="-21987" cible="-22019"/>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 0" length="0.0" source="-21987" cible="-22055"/>
+    </jonction-usage>
+    <vanne-usage identifiant="-21989" nom="X2145" adresse="1-0-4" active="false" location="1065 670">
+            <vanne-nf identifiant="-21990" version="-1" serie="948">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+            <connection connecteur-source="0" connecteur-cible="0" points="2 0" length="0.0" source="-21989" cible="-22001"/>
+            <connection connecteur-source="1" connecteur-cible="2" points="3 2" length="0.0" source="-21989" cible="-22041"/>
+    </vanne-usage>
+    <vanne-usage identifiant="-21991" nom="O2141" adresse="1-0-5" active="false" location="1055 505">
+            <vanne-no identifiant="-21992" version="-1" serie="950">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-no>
+            <connection connecteur-source="1" connecteur-cible="1" points="1 1" length="0.0" source="-21991" cible="-22021"/>
+            <connection connecteur-source="0" connecteur-cible="1" points="0 1" length="0.0" source="-21991" cible="-22027"/>
+    </vanne-usage>
+    <vanne-usage identifiant="-21993" nom="O2136" adresse="1-1-3" active="false" location="955 615">
+            <vanne-no identifiant="-21994" version="-1" serie="952">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-no>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 0" length="0.0" source="-21993" cible="-22047"/>
+            <connection connecteur-source="0" connecteur-cible="2" points="0 2" length="0.0" source="-21993" cible="-22045"/>
+    </vanne-usage>
+    <vanne-usage identifiant="-21995" nom="O2146" adresse="1-1-1" active="false" location="1150 615">
+            <vanne-no identifiant="-21996" version="-1" serie="954">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-no>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 0" length="0.0" source="-21995" cible="-22029"/>
+            <connection connecteur-source="0" connecteur-cible="2" points="0 2" length="0.0" source="-21995" cible="-22039"/>
+    </vanne-usage>
+    <vanne-usage identifiant="-21997" nom="X2135" adresse="1-2-0" active="false" location="870 670">
+            <vanne-nf identifiant="-21998" version="-1" serie="958">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+            <connection connecteur-source="1" connecteur-cible="2" points="3 2" length="0.0" source="-21997" cible="-22017"/>
+            <connection connecteur-source="0" connecteur-cible="0" points="2 0" length="0.0" source="-21997" cible="-22031"/>
+    </vanne-usage>
+    <vanne-usage identifiant="-21999" nom="O2131" adresse="1-1-4" active="false" location="860 505">
+            <vanne-no identifiant="-22000" version="-1" serie="960">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-no>
+            <connection connecteur-source="0" connecteur-cible="1" points="0 1" length="0.0" source="-21999" cible="-22049"/>
+            <connection connecteur-source="1" connecteur-cible="1" points="1 1" length="0.0" source="-21999" cible="-22015"/>
+    </vanne-usage>
+    <chambre-usage identifiant="-22001" nom="Chamber 4" orientation="1" volume-culture="13.815" volume-total="80.0" location="1080 535">
+            <chambre identifiant="-22002" version="-1" serie="962" volume="16.0">
+                    <modele identifiant="10" nom="Chambre Genoscope-1" class="bio.anode.ale.core.composant.Chambre"/>
+            </chambre>
+            <regulateur-usage identifiant="-22003" nom="Regulator Chamber 4" adresse="/dev/ttyUSB-P0:/dev/ttyUSB0;0;DB70.34;20;15;0;75" accessible="true" sonde="-22005">
+                    <regulateur identifiant="-22004" version="-1" serie="964" connecteur="fr.cns.laferme.control.connector.RegulateurS7PConnector" unite="?C" minimum="20.0" maximum="45.0" analog="true" correction-factor="1.0">
+                            <modele identifiant="24" nom="Siemens temperature regulator" default-connector="fr.cns.laferme.control.connector.RegulateurS7PConnector" class="bio.anode.ale.core.composant.Regulateur"/>
+                    </regulateur>
+            </regulateur-usage>
+            <thermometre-usage identifiant="-22005" nom="Thermometer Chamber 4" adresse="/dev/ttyUSB-P0:/dev/ttyUSB0;0;DB70.4" accessible="true" frequence-de-mise-a-jour="10000" sensibilite="0.1" alerte="5.0" mesure="30.0" derniere-mesure="2025-06-23 19:58:08.827 +0200" delta-erreur="0.3" installed="true">
+                    <thermometre identifiant="-22006" version="-1" serie="-20105" connecteur="fr.cns.laferme.control.connector.ThermometreS7PConnector" unite="?C">
+                            <modele identifiant="18" nom="Siemens thermometer" default-connector="fr.cns.laferme.control.connector.ThermometreS7PConnector" class="bio.anode.ale.core.composant.Thermometre"/>
+                    </thermometre>
+            </thermometre-usage>
+            <turbidimetre-usage identifiant="-22007" nom="Turbidimeter Chamber 4" adresse="/dev/ttyUSB-P0:/dev/ttyUSB0;0;DB7.56;DB7.60;DB7.54" accessible="true" frequence-de-mise-a-jour="5000" sensibilite="1.0" mesure="52.0" derniere-mesure="2025-06-23 19:58:15.530 +0200" delta-erreur="0.0" installed="true">
+                    <turbidimetre identifiant="-22008" version="-1" serie="966" connecteur="fr.cns.laferme.control.connector.TurbidimetreS7PConnector" unite="">
+                            <modele identifiant="9" nom="Turbidimetre Genoscope-1" default-connector="fr.cns.laferme.control.connector.TurbidimetreS7PConnector" class="bio.anode.ale.core.composant.Turbidimetre"/>
+                    </turbidimetre>
+            </turbidimetre-usage>
+            <connection connecteur-source="2" connecteur-cible="0" points="2 1050 565 2" length="0.0" source="-22001" cible="-22025"/>
+            <connection connecteur-source="0" connecteur-cible="0" points="0 2" length="0.0" source="-22001" cible="-21989"/>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 0" length="0.0" source="-22001" cible="-22039"/>
+            <connection connecteur-source="3" connecteur-cible="0" points="3 0" length="0.0" source="-22001" cible="-22021"/>
+    </chambre-usage>
+    <jonction-usage identifiant="-22009" nom="T" orientation="4" location="965 710">
+            <jonction identifiant="-22010" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="2" connecteur-cible="0" points="2 0" length="0.0" source="-22009" cible="-22017"/>
+            <connection connecteur-source="0" connecteur-cible="0" points="0 0" length="0.0" source="-22009" cible="-22041"/>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 2" length="0.0" source="-22009" cible="-22059"/>
+    </jonction-usage>
+    <vanne-usage identifiant="-22011" nom="X2143" adresse="1-0-7" active="false" location="1120 550">
+            <vanne-nf identifiant="-22012" version="-1" serie="970">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+            <connection connecteur-source="0" connecteur-cible="2" points="2 2" length="0.0" source="-22011" cible="-22023"/>
+            <connection connecteur-source="1" connecteur-cible="1" points="3 1" length="0.0" source="-22011" cible="-22039"/>
+    </vanne-usage>
+    <vanne-usage identifiant="-22013" nom="X2132" adresse="1-1-5" active="false" location="900 470">
+            <vanne-nf identifiant="-22014" version="-1" serie="972">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+            <connection connecteur-source="1" connecteur-cible="2" points="3 2" length="0.0" source="-22013" cible="-22015"/>
+            <connection connecteur-source="0" connecteur-cible="0" points="2 0" length="0.0" source="-22013" cible="-21987"/>
+    </vanne-usage>
+    <jonction-usage identifiant="-22015" nom="T" orientation="8" location="900 505">
+            <jonction identifiant="-22016" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="1" connecteur-cible="1" points="1 1" length="0.0" source="-22015" cible="-21999"/>
+            <connection connecteur-source="2" connecteur-cible="1" points="2 3" length="0.0" source="-22015" cible="-22013"/>
+            <connection connecteur-source="0" connecteur-cible="3" points="0 3" length="0.0" source="-22015" cible="-22031"/>
+    </jonction-usage>
+    <jonction-usage identifiant="-22017" nom="T" orientation="8" location="870 700">
+            <jonction identifiant="-22018" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="2" connecteur-cible="1" points="2 3" length="0.0" source="-22017" cible="-21997"/>
+            <connection connecteur-source="0" connecteur-cible="2" points="0 2" length="0.0" source="-22017" cible="-22009"/>
+            <connection connecteur-source="1" connecteur-cible="1" points="1 855 710 3" length="0.0" source="-22017" cible="-22051"/>
+    </jonction-usage>
+    <vanne-usage identifiant="-22019" nom="X2133" adresse="1-1-6" active="false" location="925 550">
+            <vanne-nf identifiant="-22020" version="-1" serie="984">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+            <connection connecteur-source="1" connecteur-cible="1" points="3 1" length="0.0" source="-22019" cible="-22045"/>
+            <connection connecteur-source="0" connecteur-cible="2" points="2 2" length="0.0" source="-22019" cible="-21987"/>
+    </vanne-usage>
+    <jonction-usage identifiant="-22021" nom="T" orientation="8" location="1095 505">
+            <jonction identifiant="-22022" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="1" connecteur-cible="1" points="1 1" length="0.0" source="-22021" cible="-21991"/>
+            <connection connecteur-source="2" connecteur-cible="1" points="2 3" length="0.0" source="-22021" cible="-22043"/>
+            <connection connecteur-source="0" connecteur-cible="3" points="0 3" length="0.0" source="-22021" cible="-22001"/>
+    </jonction-usage>
+    <jonction-usage identifiant="-22023" nom="T" orientation="1" location="1110 440">
+            <jonction identifiant="-22024" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="2" connecteur-cible="0" points="2 2" length="0.0" source="-22023" cible="-22011"/>
+            <connection connecteur-source="0" connecteur-cible="0" points="0 2" length="0.0" source="-22023" cible="-22043"/>
+            <connection connecteur-source="1" connecteur-cible="2" points="1 2" length="0.0" source="-22023" cible="-22055"/>
+    </jonction-usage>
+    <vanne-usage identifiant="-22025" nom="X2144" adresse="1-1-0" active="false" location="1035 625">
+            <vanne-nf identifiant="-22026" version="-1" serie="990">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+            <connection connecteur-source="0" connecteur-cible="2" points="2 1050 565 2" length="0.0" source="-22025" cible="-22001"/>
+            <connection connecteur-source="1" connecteur-cible="1" points="3 1050 710 1" length="0.0" source="-22025" cible="-22041"/>
+    </vanne-usage>
+    <evacuation-usage identifiant="-22027" nom="W" location="1020 505">
+            <evacuation identifiant="-22028" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </evacuation>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 0" length="0.0" source="-22027" cible="-21991"/>
+    </evacuation-usage>
+    <source-usage identifiant="-22029" nom="A" debit="0.0" volume-restant="0.0" auto-remplissage="false" line-type="SILICONE_10L" location="1200 615">
+            <source identifiant="-22030" version="-1" serie="995" type="AIR">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </source>
+            <connection connecteur-source="0" connecteur-cible="1" points="0 1" length="0.0" source="-22029" cible="-21995"/>
+    </source-usage>
+    <chambre-usage identifiant="-22031" nom="Chamber 3" orientation="1" volume-culture="14.37" volume-total="80.0" location="885 535">
+            <chambre identifiant="-22032" version="-1" serie="996" volume="16.0">
+                    <modele identifiant="10" nom="Chambre Genoscope-1" class="bio.anode.ale.core.composant.Chambre"/>
+            </chambre>
+            <regulateur-usage identifiant="-22033" nom="Regulator Chamber 3" adresse="/dev/ttyUSB-P0:/dev/ttyUSB0;0;DB71.34;20;15;0;75" accessible="true" sonde="-22035">
+                    <regulateur identifiant="-22034" version="-1" serie="998" connecteur="fr.cns.laferme.control.connector.RegulateurS7PConnector" unite="?C" minimum="20.0" maximum="45.0" analog="true" correction-factor="1.0">
+                            <modele identifiant="24" nom="Siemens temperature regulator" default-connector="fr.cns.laferme.control.connector.RegulateurS7PConnector" class="bio.anode.ale.core.composant.Regulateur"/>
+                    </regulateur>
+            </regulateur-usage>
+            <thermometre-usage identifiant="-22035" nom="Thermometer Chamber 3" adresse="/dev/ttyUSB-P0:/dev/ttyUSB0;0;DB71.4" accessible="true" frequence-de-mise-a-jour="10000" sensibilite="0.1" alerte="5.0" mesure="30.0" derniere-mesure="2025-06-23 19:58:17.706 +0200" delta-erreur="0.6" installed="true">
+                    <thermometre identifiant="-22036" version="-1" serie="-20133" connecteur="fr.cns.laferme.control.connector.ThermometreS7PConnector" unite="?C">
+                            <modele identifiant="18" nom="Siemens thermometer" default-connector="fr.cns.laferme.control.connector.ThermometreS7PConnector" class="bio.anode.ale.core.composant.Thermometre"/>
+                    </thermometre>
+            </thermometre-usage>
+            <turbidimetre-usage identifiant="-22037" nom="Turbidimeter Chamber 3" adresse="/dev/ttyUSB-P0:/dev/ttyUSB0;0;DB7.38;DB7.42;DB7.36" accessible="true" frequence-de-mise-a-jour="5000" sensibilite="1.0" mesure="81.0" derniere-mesure="2025-06-23 19:58:15.658 +0200" delta-erreur="0.0" installed="true">
+                    <turbidimetre identifiant="-22038" version="-1" serie="1000" connecteur="fr.cns.laferme.control.connector.TurbidimetreS7PConnector" unite="">
+                            <modele identifiant="9" nom="Turbidimetre Genoscope-1" default-connector="fr.cns.laferme.control.connector.TurbidimetreS7PConnector" class="bio.anode.ale.core.composant.Turbidimetre"/>
+                    </turbidimetre>
+            </turbidimetre-usage>
+            <connection connecteur-source="3" connecteur-cible="0" points="3 0" length="0.0" source="-22031" cible="-22015"/>
+            <connection connecteur-source="2" connecteur-cible="0" points="2 855 565 2" length="0.0" source="-22031" cible="-22051"/>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 0" length="0.0" source="-22031" cible="-22045"/>
+            <connection connecteur-source="0" connecteur-cible="0" points="0 2" length="0.0" source="-22031" cible="-21997"/>
+    </chambre-usage>
+    <jonction-usage identifiant="-22039" nom="T" orientation="1" location="1120 615">
+            <jonction identifiant="-22040" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="0" connecteur-cible="1" points="0 1" length="0.0" source="-22039" cible="-22001"/>
+            <connection connecteur-source="1" connecteur-cible="1" points="1 3" length="0.0" source="-22039" cible="-22011"/>
+            <connection connecteur-source="2" connecteur-cible="0" points="2 0" length="0.0" source="-22039" cible="-21995"/>
+    </jonction-usage>
+    <jonction-usage identifiant="-22041" nom="T" orientation="8" location="1065 700">
+            <jonction identifiant="-22042" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="0" connecteur-cible="0" points="0 0" length="0.0" source="-22041" cible="-22009"/>
+            <connection connecteur-source="1" connecteur-cible="1" points="1 1050 710 3" length="0.0" source="-22041" cible="-22025"/>
+            <connection connecteur-source="2" connecteur-cible="1" points="2 3" length="0.0" source="-22041" cible="-21989"/>
+    </jonction-usage>
+    <vanne-usage identifiant="-22043" nom="X2142" adresse="1-0-6" active="false" location="1095 470">
+            <vanne-nf identifiant="-22044" version="-1" serie="1010">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+            <connection connecteur-source="1" connecteur-cible="2" points="3 2" length="0.0" source="-22043" cible="-22021"/>
+            <connection connecteur-source="0" connecteur-cible="0" points="2 0" length="0.0" source="-22043" cible="-22023"/>
+    </vanne-usage>
+    <jonction-usage identifiant="-22045" nom="T" orientation="1" location="925 615">
+            <jonction identifiant="-22046" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="1" connecteur-cible="1" points="1 3" length="0.0" source="-22045" cible="-22019"/>
+            <connection connecteur-source="0" connecteur-cible="1" points="0 1" length="0.0" source="-22045" cible="-22031"/>
+            <connection connecteur-source="2" connecteur-cible="0" points="2 0" length="0.0" source="-22045" cible="-21993"/>
+    </jonction-usage>
+    <source-usage identifiant="-22047" nom="A" debit="0.0" volume-restant="0.0" auto-remplissage="false" line-type="SILICONE_10L" location="1000 615">
+            <source identifiant="-22048" version="-1" serie="1015" type="AIR">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </source>
+            <connection connecteur-source="0" connecteur-cible="1" points="0 1" length="0.0" source="-22047" cible="-21993"/>
+    </source-usage>
+    <evacuation-usage identifiant="-22049" nom="W" location="825 505">
+            <evacuation identifiant="-22050" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </evacuation>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 0" length="0.0" source="-22049" cible="-21999"/>
+    </evacuation-usage>
+    <vanne-usage identifiant="-22051" nom="X2134" adresse="1-1-7" active="false" location="840 625">
+            <vanne-nf identifiant="-22052" version="-1" serie="1020">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+            <connection connecteur-source="0" connecteur-cible="2" points="2 855 565 2" length="0.0" source="-22051" cible="-22031"/>
+            <connection connecteur-source="1" connecteur-cible="1" points="3 855 710 1" length="0.0" source="-22051" cible="-22017"/>
+    </vanne-usage>
+    <vanne-usage identifiant="-22053" nom="X1006" adresse="2-2-4" active="false" location="165 740">
+            <vanne-nf identifiant="-22054" version="2" serie="870">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+            <connection connecteur-source="0" connecteur-cible="1" points="2 1" length="0.0" source="-22053" cible="-21979"/>
+            <connection connecteur-source="1" connecteur-cible="1" points="3 3" length="0.0" source="-22053" cible="-22161"/>
+    </vanne-usage>
+    <jonction-usage identifiant="-22055" nom="T" orientation="1" location="1015 430">
+            <jonction identifiant="-22056" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="2" connecteur-cible="1" points="2 1" length="0.0" source="-22055" cible="-22023"/>
+            <connection connecteur-source="0" connecteur-cible="1" points="0 1" length="0.0" source="-22055" cible="-21987"/>
+            <connection connecteur-source="1" connecteur-cible="1" points="1 1" length="0.0" source="-22055" cible="-22155"/>
+    </jonction-usage>
+    <jonction-usage identifiant="-22057" nom="T" orientation="1" location="205 430">
+            <jonction identifiant="-22058" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="2" connecteur-cible="1" points="2 1" length="0.0" source="-22057" cible="-21967"/>
+            <connection connecteur-source="0" connecteur-cible="1" points="0 1" length="0.0" source="-22057" cible="-21943"/>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 0" length="0.0" source="-22057" cible="-22153"/>
+    </jonction-usage>
+    <vanne-usage identifiant="-22059" nom="X2006" adresse="1-1-2" active="false" location="965 740">
+            <vanne-nf identifiant="-22060" version="-1" serie="10451">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+            <connection connecteur-source="0" connecteur-cible="1" points="2 1" length="0.0" source="-22059" cible="-22009"/>
+            <connection connecteur-source="1" connecteur-cible="1" points="3 3" length="0.0" source="-22059" cible="-22169"/>
+    </vanne-usage>
+    <jonction-usage identifiant="-22061" nom="T" orientation="16" location="455 690">
+            <jonction identifiant="-22062" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="2" connecteur-cible="0" points="2 2" length="0.0" source="-22061" cible="-22161"/>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 0" length="0.0" source="-22061" cible="-21981"/>
+            <connection connecteur-source="0" connecteur-cible="1" points="0 1" length="0.0" source="-22061" cible="-22151"/>
+    </jonction-usage>
+    <vanne-usage identifiant="-22063" nom="X1000" adresse="2-0-3" active="false" location="345 15">
+            <vanne-nf identifiant="-22064" version="-1" serie="10457">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 0" length="0.0" source="-22063" cible="-22065"/>
+            <connection connecteur-source="0" connecteur-cible="2" points="0 2" length="0.0" source="-22063" cible="-22203"/>
+    </vanne-usage>
+    <jonction-usage identifiant="-22065" nom="T" orientation="16" location="395 25">
+            <jonction identifiant="-22066" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 0" length="0.0" source="-22065" cible="-22067"/>
+            <connection connecteur-source="2" connecteur-cible="0" points="2 0" length="0.0" source="-22065" cible="-22075"/>
+            <connection connecteur-source="0" connecteur-cible="1" points="0 1" length="0.0" source="-22065" cible="-22063"/>
+    </jonction-usage>
+    <vanne-usage identifiant="-22067" nom="X0" adresse="1-3-3" active="false" location="605 25">
+            <vanne-nf identifiant="-22068" version="-1" serie="10465">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+            <connection connecteur-source="0" connecteur-cible="1" points="0 1" length="0.0" source="-22067" cible="-22065"/>
+            <connection connecteur-source="1" connecteur-cible="1" points="1 1" length="0.0" source="-22067" cible="-22143"/>
+    </vanne-usage>
+    <source-usage identifiant="-22069" nom="E" debit="0.0" volume-restant="0.0" auto-remplissage="false" line-type="SILICONE_10L" location="605 115" control-valve="-22185">
+            <source identifiant="-22070" version="-1" serie="10468" type="EAU">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </source>
+            <pressuremetre-usage identifiant="-22071" nom="Pressure sensor for water tank" adresse="/dev/ttyUSB-P3;57600;10;18" accessible="true" frequence-de-mise-a-jour="1000" sensibilite="2.0" alerte="0.0" mesure="317.6" derniere-mesure="2025-06-23 19:58:18.496 +0200" delta-erreur="0.0" installed="true">
+                    <pressuremetre identifiant="-22072" version="-1" serie="-10310" connecteur="fr.cns.laferme.control.connector.arduino.HWPressureConnector" unite="mb">
+                            <modele identifiant="41" nom="HW Pressure sensor" default-connector="fr.cns.laferme.control.connector.arduino.HWPressureConnector" class="bio.anode.ale.core.composant.Pressuremetre"/>
+                    </pressuremetre>
+            </pressuremetre-usage>
+            <connection connecteur-source="0" connecteur-cible="1" points="2 3" length="0.0" source="-22069" cible="-22185"/>
+    </source-usage>
+    <jonction-usage identifiant="-22073" nom="T" orientation="4" location="605 60">
+            <jonction identifiant="-22074" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="0" connecteur-cible="0" points="0 0" length="0.0" source="-22073" cible="-22085"/>
+            <connection connecteur-source="2" connecteur-cible="1" points="2 1" length="0.0" source="-22073" cible="-22083"/>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 2" length="0.0" source="-22073" cible="-22185"/>
+    </jonction-usage>
+    <jonction-usage identifiant="-22075" nom="T" orientation="16" location="395 60">
+            <jonction identifiant="-22076" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 0" length="0.0" source="-22075" cible="-22083"/>
+            <connection connecteur-source="0" connecteur-cible="2" points="0 2" length="0.0" source="-22075" cible="-22065"/>
+            <connection connecteur-source="2" connecteur-cible="0" points="2 0" length="0.0" source="-22075" cible="-22077"/>
+    </jonction-usage>
+    <jonction-usage identifiant="-22077" nom="T" orientation="16" location="395 160">
+            <jonction identifiant="-22078" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="2" connecteur-cible="0" points="2 0" length="0.0" source="-22077" cible="-22079"/>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 0" length="0.0" source="-22077" cible="-22109"/>
+            <connection connecteur-source="0" connecteur-cible="2" points="0 2" length="0.0" source="-22077" cible="-22075"/>
+    </jonction-usage>
+    <jonction-usage identifiant="-22079" nom="T" orientation="16" location="395 265">
+            <jonction identifiant="-22080" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="0" connecteur-cible="2" points="0 2" length="0.0" source="-22079" cible="-22077"/>
+            <connection connecteur-source="2" connecteur-cible="0" points="2 0" length="0.0" source="-22079" cible="-22081"/>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 0" length="0.0" source="-22079" cible="-22113"/>
+    </jonction-usage>
+    <jonction-usage identifiant="-22081" nom="T" orientation="16" location="395 355">
+            <jonction identifiant="-22082" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="0" connecteur-cible="2" points="0 2" length="0.0" source="-22081" cible="-22079"/>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 0" length="0.0" source="-22081" cible="-22131"/>
+            <connection connecteur-source="2" connecteur-cible="1" points="2 1" length="0.0" source="-22081" cible="-22149"/>
+    </jonction-usage>
+    <vanne-usage identifiant="-22083" nom="X1002" adresse="2-1-0" active="false" location="435 60">
+            <vanne-nf identifiant="-22084" version="-1" serie="10481">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+            <connection connecteur-source="1" connecteur-cible="2" points="1 2" length="0.0" source="-22083" cible="-22073"/>
+            <connection connecteur-source="0" connecteur-cible="1" points="0 1" length="0.0" source="-22083" cible="-22075"/>
+    </vanne-usage>
+    <vanne-usage identifiant="-22085" nom="X2002" adresse="1-2-2" active="false" location="765 60">
+            <vanne-nf identifiant="-22086" version="-1" serie="10483">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+            <connection connecteur-source="0" connecteur-cible="0" points="0 0" length="0.0" source="-22085" cible="-22073"/>
+            <connection connecteur-source="1" connecteur-cible="1" points="1 1" length="0.0" source="-22085" cible="-22137"/>
+    </vanne-usage>
+    <source-usage identifiant="-22087" nom="S" debit="1.5" volume-restant="3912.0" auto-remplissage="false" line-type="SILICONE_10L" location="605 415" control-valve="-22191">
+            <source identifiant="-22088" version="-1" serie="10490" type="SOUDE">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </source>
+            <pressuremetre-usage identifiant="-22089" nom="Pressure sensor for NaOH tank" adresse="/dev/ttyUSB-P3;57600;10;16" accessible="true" frequence-de-mise-a-jour="1000" sensibilite="2.0" alerte="0.0" mesure="314.6" derniere-mesure="2025-06-23 19:58:18.738 +0200" delta-erreur="0.0" installed="true">
+                    <pressuremetre identifiant="-22090" version="-1" serie="-10312" connecteur="fr.cns.laferme.control.connector.arduino.HWPressureConnector" unite="mb">
+                            <modele identifiant="41" nom="HW Pressure sensor" default-connector="fr.cns.laferme.control.connector.arduino.HWPressureConnector" class="bio.anode.ale.core.composant.Pressuremetre"/>
+                    </pressuremetre>
+            </pressuremetre-usage>
+            <connection connecteur-source="0" connecteur-cible="1" points="2 3" length="0.0" source="-22087" cible="-22191"/>
+    </source-usage>
+    <source-usage identifiant="-22091" nom="M1" debit="0.19" volume-restant="3494.9000000000024" auto-remplissage="false" composition="ALTM355" line-type="SILICONE_10L" calibration-date-id="1740747830000" location="605 215" control-valve="-22187">
+            <source identifiant="-22092" version="-1" serie="10494" type="MILIEU">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </source>
+            <weight-sensor-usage identifiant="-22093" nom="Weight scale for M1" adresse="/dev/ttyUSB-P1,/dev/ttyUSB1" accessible="true" frequence-de-mise-a-jour="2000" sensibilite="0.1" alerte="0.0" mesure="6546.8" derniere-mesure="2025-06-23 19:58:19.272 +0200" delta-erreur="0.0" installed="true">
+                    <weight-sensor identifiant="-22094" version="-1" serie="-21847" connecteur="fr.cns.laferme.control.connector.TreeLWWeightConnector" unite="g">
+                            <modele identifiant="38" nom="Tree LW scale" default-connector="fr.cns.laferme.control.connector.TreeLWWeightConnector" class="bio.anode.ale.core.composant.WeightSensor"/>
+                    </weight-sensor>
+            </weight-sensor-usage>
+            <pressuremetre-usage identifiant="-22095" nom="Pressure sensor for M1 tank" adresse="/dev/ttyUSB-P3;57600;10;10" accessible="true" frequence-de-mise-a-jour="1000" sensibilite="2.0" alerte="0.0" mesure="315.0" derniere-mesure="2025-06-23 19:58:19.176 +0200" delta-erreur="0.0" installed="true">
+                    <pressuremetre identifiant="-22096" version="-1" serie="-10314" connecteur="fr.cns.laferme.control.connector.arduino.HWPressureConnector" unite="mb">
+                            <modele identifiant="41" nom="HW Pressure sensor" default-connector="fr.cns.laferme.control.connector.arduino.HWPressureConnector" class="bio.anode.ale.core.composant.Pressuremetre"/>
+                    </pressuremetre>
+            </pressuremetre-usage>
+            <connection connecteur-source="0" connecteur-cible="1" points="2 3" length="0.0" source="-22091" cible="-22187"/>
+    </source-usage>
+    <jonction-usage identifiant="-22097" nom="T" orientation="4" location="605 160">
+            <jonction identifiant="-22098" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="2" connecteur-cible="1" points="2 1" length="0.0" source="-22097" cible="-22103"/>
+            <connection connecteur-source="0" connecteur-cible="0" points="0 0" length="0.0" source="-22097" cible="-22105"/>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 2" length="0.0" source="-22097" cible="-22187"/>
+    </jonction-usage>
+    <jonction-usage identifiant="-22099" nom="T" orientation="1" location="490 160">
+            <jonction identifiant="-22100" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="0" connecteur-cible="1" points="0 1" length="0.0" source="-22099" cible="-22109"/>
+            <connection connecteur-source="2" connecteur-cible="0" points="2 0" length="0.0" source="-22099" cible="-22103"/>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 0" length="0.0" source="-22099" cible="-22177"/>
+    </jonction-usage>
+    <jonction-usage identifiant="-22101" nom="T" orientation="1" location="720 160">
+            <jonction identifiant="-22102" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="0" connecteur-cible="1" points="0 1" length="0.0" source="-22101" cible="-22105"/>
+            <connection connecteur-source="2" connecteur-cible="0" points="2 0" length="0.0" source="-22101" cible="-22107"/>
+            <connection connecteur-source="1" connecteur-cible="1" points="1 1" length="0.0" source="-22101" cible="-22179"/>
+    </jonction-usage>
+    <vanne-usage identifiant="-22103" nom="O1211" adresse="2-0-4" active="false" location="545 160">
+            <vanne-no identifiant="-22104" version="-1" serie="10501">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-no>
+            <connection connecteur-source="0" connecteur-cible="2" points="0 2" length="0.0" source="-22103" cible="-22099"/>
+            <connection connecteur-source="1" connecteur-cible="2" points="1 2" length="0.0" source="-22103" cible="-22097"/>
+    </vanne-usage>
+    <vanne-usage identifiant="-22105" nom="O2211" adresse="1-3-0" active="false" location="655 160">
+            <vanne-no identifiant="-22106" version="-1" serie="10503">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-no>
+            <connection connecteur-source="0" connecteur-cible="0" points="0 0" length="0.0" source="-22105" cible="-22097"/>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 0" length="0.0" source="-22105" cible="-22101"/>
+    </vanne-usage>
+    <vanne-usage identifiant="-22107" nom="X2210" adresse="1-2-3" active="false" location="765 160">
+            <vanne-nf identifiant="-22108" version="-1" serie="10505">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+            <connection connecteur-source="0" connecteur-cible="2" points="0 2" length="0.0" source="-22107" cible="-22101"/>
+            <connection connecteur-source="1" connecteur-cible="1" points="1 1" length="0.0" source="-22107" cible="-22139"/>
+    </vanne-usage>
+    <vanne-usage identifiant="-22109" nom="X1210" adresse="2-1-1" active="false" location="435 160">
+            <vanne-nf identifiant="-22110" version="-1" serie="10507">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+            <connection connecteur-source="0" connecteur-cible="1" points="0 1" length="0.0" source="-22109" cible="-22077"/>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 0" length="0.0" source="-22109" cible="-22099"/>
+    </vanne-usage>
+    <vanne-usage identifiant="-22111" nom="O1221" adresse="2-0-5" active="false" location="545 265">
+            <vanne-no identifiant="-22112" version="-1" serie="10509">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-no>
+            <connection connecteur-source="0" connecteur-cible="2" points="0 2" length="0.0" source="-22111" cible="-22127"/>
+            <connection connecteur-source="1" connecteur-cible="2" points="1 2" length="0.0" source="-22111" cible="-22129"/>
+    </vanne-usage>
+    <vanne-usage identifiant="-22113" nom="X1220" adresse="2-1-2" active="false" location="435 265">
+            <vanne-nf identifiant="-22114" version="-1" serie="10511">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 0" length="0.0" source="-22113" cible="-22127"/>
+            <connection connecteur-source="0" connecteur-cible="1" points="0 1" length="0.0" source="-22113" cible="-22079"/>
+    </vanne-usage>
+    <source-usage identifiant="-22115" nom="M2" debit="0.19" volume-restant="1300.0" auto-remplissage="false" composition="ALTM154" line-type="SILICONE_10L" calibration-date-id="1740760210000" location="605 320" control-valve="-22189">
+            <source identifiant="-22116" version="-1" serie="10514" type="MILIEU">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </source>
+            <weight-sensor-usage identifiant="-22117" nom="Weight scale for M2" adresse="/dev/ttyUSB-P2,/dev/ttyUSB2" accessible="true" frequence-de-mise-a-jour="2000" sensibilite="0.1" alerte="0.0" mesure="4452.9" derniere-mesure="2025-06-23 19:58:19.272 +0200" delta-erreur="0.0" installed="true">
+                    <weight-sensor identifiant="-22118" version="-1" serie="-21845" connecteur="fr.cns.laferme.control.connector.TreeLWWeightConnector" unite="g">
+                            <modele identifiant="38" nom="Tree LW scale" default-connector="fr.cns.laferme.control.connector.TreeLWWeightConnector" class="bio.anode.ale.core.composant.WeightSensor"/>
+                    </weight-sensor>
+            </weight-sensor-usage>
+            <pressuremetre-usage identifiant="-22119" nom="Pressure sensor for M2 tank" adresse="/dev/ttyUSB-P3;57600;10;12" accessible="true" frequence-de-mise-a-jour="1000" sensibilite="2.0" alerte="0.0" mesure="312.5" derniere-mesure="2025-06-23 19:58:18.562 +0200" delta-erreur="0.0" installed="true">
+                    <pressuremetre identifiant="-22120" version="-1" serie="-10316" connecteur="fr.cns.laferme.control.connector.arduino.HWPressureConnector" unite="mb">
+                            <modele identifiant="41" nom="HW Pressure sensor" default-connector="fr.cns.laferme.control.connector.arduino.HWPressureConnector" class="bio.anode.ale.core.composant.Pressuremetre"/>
+                    </pressuremetre>
+            </pressuremetre-usage>
+            <connection connecteur-source="0" connecteur-cible="1" points="2 3" length="0.0" source="-22115" cible="-22189"/>
+    </source-usage>
+    <vanne-usage identifiant="-22121" nom="O2221" adresse="1-3-1" active="false" location="655 265">
+            <vanne-no identifiant="-22122" version="-1" serie="10515">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-no>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 0" length="0.0" source="-22121" cible="-22123"/>
+            <connection connecteur-source="0" connecteur-cible="0" points="0 0" length="0.0" source="-22121" cible="-22129"/>
+    </vanne-usage>
+    <jonction-usage identifiant="-22123" nom="T" orientation="1" location="720 265">
+            <jonction identifiant="-22124" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="0" connecteur-cible="1" points="0 1" length="0.0" source="-22123" cible="-22121"/>
+            <connection connecteur-source="2" connecteur-cible="0" points="2 0" length="0.0" source="-22123" cible="-22125"/>
+            <connection connecteur-source="1" connecteur-cible="1" points="1 1" length="0.0" source="-22123" cible="-22183"/>
+    </jonction-usage>
+    <vanne-usage identifiant="-22125" nom="X2220" adresse="1-2-4" active="false" location="765 265">
+            <vanne-nf identifiant="-22126" version="-1" serie="10519">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+            <connection connecteur-source="0" connecteur-cible="2" points="0 2" length="0.0" source="-22125" cible="-22123"/>
+            <connection connecteur-source="1" connecteur-cible="1" points="1 1" length="0.0" source="-22125" cible="-22141"/>
+    </vanne-usage>
+    <jonction-usage identifiant="-22127" nom="T" orientation="1" location="490 265">
+            <jonction identifiant="-22128" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="2" connecteur-cible="0" points="2 0" length="0.0" source="-22127" cible="-22111"/>
+            <connection connecteur-source="0" connecteur-cible="1" points="0 1" length="0.0" source="-22127" cible="-22113"/>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 0" length="0.0" source="-22127" cible="-22181"/>
+    </jonction-usage>
+    <jonction-usage identifiant="-22129" nom="T" orientation="4" location="605 265">
+            <jonction identifiant="-22130" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="2" connecteur-cible="1" points="2 1" length="0.0" source="-22129" cible="-22111"/>
+            <connection connecteur-source="0" connecteur-cible="0" points="0 0" length="0.0" source="-22129" cible="-22121"/>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 2" length="0.0" source="-22129" cible="-22189"/>
+    </jonction-usage>
+    <vanne-usage identifiant="-22131" nom="X1003" adresse="2-1-3" active="false" location="435 355">
+            <vanne-nf identifiant="-22132" version="-1" serie="10527">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+            <connection connecteur-source="0" connecteur-cible="1" points="0 1" length="0.0" source="-22131" cible="-22081"/>
+            <connection connecteur-source="1" connecteur-cible="2" points="1 2" length="0.0" source="-22131" cible="-22135"/>
+    </vanne-usage>
+    <vanne-usage identifiant="-22133" nom="X2003" adresse="1-2-5" active="false" location="765 355">
+            <vanne-nf identifiant="-22134" version="-1" serie="10535">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+            <connection connecteur-source="1" connecteur-cible="1" points="1 1" length="0.0" source="-22133" cible="-22145"/>
+            <connection connecteur-source="0" connecteur-cible="0" points="0 0" length="0.0" source="-22133" cible="-22135"/>
+    </vanne-usage>
+    <jonction-usage identifiant="-22135" nom="T" orientation="4" location="605 355">
+            <jonction identifiant="-22136" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="2" connecteur-cible="1" points="2 1" length="0.0" source="-22135" cible="-22131"/>
+            <connection connecteur-source="0" connecteur-cible="0" points="0 0" length="0.0" source="-22135" cible="-22133"/>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 2" length="0.0" source="-22135" cible="-22191"/>
+    </jonction-usage>
+    <jonction-usage identifiant="-22137" nom="T" orientation="8" location="815 60">
+            <jonction identifiant="-22138" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="2" connecteur-cible="0" points="2 0" length="0.0" source="-22137" cible="-22143"/>
+            <connection connecteur-source="1" connecteur-cible="1" points="1 1" length="0.0" source="-22137" cible="-22085"/>
+            <connection connecteur-source="0" connecteur-cible="2" points="0 2" length="0.0" source="-22137" cible="-22139"/>
+    </jonction-usage>
+    <jonction-usage identifiant="-22139" nom="T" orientation="8" location="815 160">
+            <jonction identifiant="-22140" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="0" connecteur-cible="2" points="0 2" length="0.0" source="-22139" cible="-22141"/>
+            <connection connecteur-source="1" connecteur-cible="1" points="1 1" length="0.0" source="-22139" cible="-22107"/>
+            <connection connecteur-source="2" connecteur-cible="0" points="2 0" length="0.0" source="-22139" cible="-22137"/>
+    </jonction-usage>
+    <jonction-usage identifiant="-22141" nom="T" orientation="8" location="815 265">
+            <jonction identifiant="-22142" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="2" connecteur-cible="0" points="2 0" length="0.0" source="-22141" cible="-22139"/>
+            <connection connecteur-source="0" connecteur-cible="2" points="0 2" length="0.0" source="-22141" cible="-22145"/>
+            <connection connecteur-source="1" connecteur-cible="1" points="1 1" length="0.0" source="-22141" cible="-22125"/>
+    </jonction-usage>
+    <jonction-usage identifiant="-22143" nom="T" orientation="8" location="815 25">
+            <jonction identifiant="-22144" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="0" connecteur-cible="2" points="0 2" length="0.0" source="-22143" cible="-22137"/>
+            <connection connecteur-source="1" connecteur-cible="1" points="1 1" length="0.0" source="-22143" cible="-22067"/>
+            <connection connecteur-source="2" connecteur-cible="0" points="2 0" length="0.0" source="-22143" cible="-22147"/>
+    </jonction-usage>
+    <jonction-usage identifiant="-22145" nom="T" orientation="8" location="815 355">
+            <jonction identifiant="-22146" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="2" connecteur-cible="0" points="2 0" length="0.0" source="-22145" cible="-22141"/>
+            <connection connecteur-source="1" connecteur-cible="1" points="1 1" length="0.0" source="-22145" cible="-22133"/>
+            <connection connecteur-source="0" connecteur-cible="1" points="0 1" length="0.0" source="-22145" cible="-22157"/>
+    </jonction-usage>
+    <vanne-usage identifiant="-22147" nom="X2000" adresse="1-0-3" active="false" location="850 15">
+            <vanne-nf identifiant="-22148" version="-1" serie="10559">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+            <connection connecteur-source="0" connecteur-cible="2" points="0 2" length="0.0" source="-22147" cible="-22143"/>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 0" length="0.0" source="-22147" cible="-22209"/>
+    </vanne-usage>
+    <jonction-usage identifiant="-22149" nom="T" orientation="1" location="395 420">
+            <jonction identifiant="-22150" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="2" connecteur-cible="0" points="2 0" length="0.0" source="-22149" cible="-22151"/>
+            <connection connecteur-source="1" connecteur-cible="2" points="1 2" length="0.0" source="-22149" cible="-22081"/>
+            <connection connecteur-source="0" connecteur-cible="1" points="0 1" length="0.0" source="-22149" cible="-22153"/>
+    </jonction-usage>
+    <vanne-usage identifiant="-22151" nom="O1005" adresse="2-1-4" active="false" location="440 420">
+            <vanne-no identifiant="-22152" version="-1" serie="10567">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-no>
+            <connection connecteur-source="0" connecteur-cible="2" points="0 2" length="0.0" source="-22151" cible="-22149"/>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 0" length="0.0" source="-22151" cible="-22061"/>
+    </vanne-usage>
+    <vanne-usage identifiant="-22153" nom="X1004" adresse="2-1-5" active="false" location="350 420">
+            <vanne-nf identifiant="-22154" version="-1" serie="10569">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 0" length="0.0" source="-22153" cible="-22149"/>
+            <connection connecteur-source="0" connecteur-cible="1" points="0 1" length="0.0" source="-22153" cible="-22057"/>
+    </vanne-usage>
+    <vanne-usage identifiant="-22155" nom="X2004" adresse="1-2-1" active="false" location="850 420">
+            <vanne-nf identifiant="-22156" version="-1" serie="10571">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+            <connection connecteur-source="0" connecteur-cible="2" points="0 2" length="0.0" source="-22155" cible="-22157"/>
+            <connection connecteur-source="1" connecteur-cible="1" points="1 1" length="0.0" source="-22155" cible="-22055"/>
+    </vanne-usage>
+    <jonction-usage identifiant="-22157" nom="T" orientation="1" location="815 420">
+            <jonction identifiant="-22158" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 0" length="0.0" source="-22157" cible="-22145"/>
+            <connection connecteur-source="2" connecteur-cible="0" points="2 0" length="0.0" source="-22157" cible="-22155"/>
+            <connection connecteur-source="0" connecteur-cible="1" points="0 1" length="0.0" source="-22157" cible="-22159"/>
+    </jonction-usage>
+    <vanne-usage identifiant="-22159" nom="O2005" adresse="1-2-6" active="false" location="770 420">
+            <vanne-no identifiant="-22160" version="-1" serie="10575">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-no>
+            <connection connecteur-source="0" connecteur-cible="2" points="0 2" length="0.0" source="-22159" cible="-22175"/>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 0" length="0.0" source="-22159" cible="-22157"/>
+    </vanne-usage>
+    <vanne-usage identifiant="-22161" nom="O1007" adresse="2-0-7" active="false" location="455 740">
+            <vanne-no identifiant="-22162" version="-1" serie="10577">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-no>
+            <connection connecteur-source="0" connecteur-cible="2" points="2 2" length="0.0" source="-22161" cible="-22061"/>
+            <connection connecteur-source="1" connecteur-cible="1" points="3 3" length="0.0" source="-22161" cible="-22053"/>
+    </vanne-usage>
+    <vanne-usage identifiant="-22163" nom="O1008" adresse="2-0-6" active="false" location="510 690">
+            <vanne-no identifiant="-22164" version="-1" serie="10579">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-no>
+            <connection connecteur-source="0" connecteur-cible="1" points="0 1" length="0.0" source="-22163" cible="-21981"/>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 0" length="0.0" source="-22163" cible="-22215"/>
+    </vanne-usage>
+    <evacuation-usage identifiant="-22165" nom="W" location="575 690">
+            <evacuation identifiant="-22166" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </evacuation>
+            <connection connecteur-source="0" connecteur-cible="2" points="0 2" length="0.0" source="-22165" cible="-22215"/>
+    </evacuation-usage>
+    <evacuation-usage identifiant="-22167" nom="W" location="615 690">
+            <evacuation identifiant="-22168" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </evacuation>
+            <connection connecteur-source="1" connecteur-cible="2" points="1 2" length="0.0" source="-22167" cible="-22221"/>
+    </evacuation-usage>
+    <vanne-usage identifiant="-22169" nom="O2007" adresse="1-2-7" active="false" location="755 740">
+            <vanne-no identifiant="-22170" version="-1" serie="10587">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-no>
+            <connection connecteur-source="0" connecteur-cible="0" points="2 0" length="0.0" source="-22169" cible="-22175"/>
+            <connection connecteur-source="1" connecteur-cible="1" points="3 3" length="0.0" source="-22169" cible="-22059"/>
+    </vanne-usage>
+    <piege-usage identifiant="-22171" nom="Piege" orientation="1" location="740 695">
+            <piege identifiant="-22172" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </piege>
+            <connection connecteur-source="0" connecteur-cible="1" points="0 1" length="0.0" source="-22171" cible="-22173"/>
+            <connection connecteur-source="1" connecteur-cible="1" points="1 1" length="0.0" source="-22171" cible="-22175"/>
+    </piege-usage>
+    <vanne-usage identifiant="-22173" nom="O2008" adresse="1-3-2" active="false" location="690 690">
+            <vanne-no identifiant="-22174" version="-1" serie="10591">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-no>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 0" length="0.0" source="-22173" cible="-22171"/>
+            <connection connecteur-source="0" connecteur-cible="0" points="0 0" length="0.0" source="-22173" cible="-22221"/>
+    </vanne-usage>
+    <jonction-usage identifiant="-22175" nom="T" orientation="8" location="755 690">
+            <jonction identifiant="-22176" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="0" connecteur-cible="0" points="0 2" length="0.0" source="-22175" cible="-22169"/>
+            <connection connecteur-source="1" connecteur-cible="1" points="1 1" length="0.0" source="-22175" cible="-22171"/>
+            <connection connecteur-source="2" connecteur-cible="0" points="2 0" length="0.0" source="-22175" cible="-22159"/>
+    </jonction-usage>
+    <vanne-usage identifiant="-22177" nom="X121" adresse="0-0-0" active="false" location="505 135">
+            <vanne-nf identifiant="-22178" version="-1" serie="10621">
+                    <modele identifiant="22" nom="Manual clamp" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 0" length="0.0" source="-22177" cible="-22179"/>
+            <connection connecteur-source="0" connecteur-cible="1" points="0 1" length="0.0" source="-22177" cible="-22099"/>
+    </vanne-usage>
+    <vanne-usage identifiant="-22179" nom="X221" adresse="0-0-0" active="false" location="705 135">
+            <vanne-nf identifiant="-22180" version="-1" serie="10623">
+                    <modele identifiant="22" nom="Manual clamp" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+            <connection connecteur-source="0" connecteur-cible="1" points="0 1" length="0.0" source="-22179" cible="-22177"/>
+            <connection connecteur-source="1" connecteur-cible="1" points="1 1" length="0.0" source="-22179" cible="-22101"/>
+    </vanne-usage>
+    <vanne-usage identifiant="-22181" nom="X122" adresse="0-0-0" active="false" location="505 240">
+            <vanne-nf identifiant="-22182" version="-1" serie="10629">
+                    <modele identifiant="22" nom="Manual clamp" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 0" length="0.0" source="-22181" cible="-22183"/>
+            <connection connecteur-source="0" connecteur-cible="1" points="0 1" length="0.0" source="-22181" cible="-22127"/>
+    </vanne-usage>
+    <vanne-usage identifiant="-22183" nom="X222" adresse="0-0-0" active="false" location="705 240">
+            <vanne-nf identifiant="-22184" version="-1" serie="10631">
+                    <modele identifiant="22" nom="Manual clamp" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+            <connection connecteur-source="0" connecteur-cible="1" points="0 1" length="0.0" source="-22183" cible="-22181"/>
+            <connection connecteur-source="1" connecteur-cible="1" points="1 1" length="0.0" source="-22183" cible="-22123"/>
+    </vanne-usage>
+    <vanne-usage identifiant="-22185" nom="X2" adresse="1-3-4" active="false" location="605 85">
+            <vanne-nf identifiant="-22186" version="-1" serie="10965">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+            <connection connecteur-source="0" connecteur-cible="1" points="2 1" length="0.0" source="-22185" cible="-22073"/>
+            <connection connecteur-source="1" connecteur-cible="0" points="3 2" length="0.0" source="-22185" cible="-22069"/>
+    </vanne-usage>
+    <vanne-usage identifiant="-22187" nom="X01" adresse="1-3-5" active="false" location="605 185">
+            <vanne-nf identifiant="-22188" version="-1" serie="10967">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+            <connection connecteur-source="0" connecteur-cible="1" points="2 1" length="0.0" source="-22187" cible="-22097"/>
+            <connection connecteur-source="1" connecteur-cible="0" points="3 2" length="0.0" source="-22187" cible="-22091"/>
+    </vanne-usage>
+    <vanne-usage identifiant="-22189" nom="X02" adresse="1-3-6" active="false" location="605 290">
+            <vanne-nf identifiant="-22190" version="-1" serie="10969">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+            <connection connecteur-source="0" connecteur-cible="1" points="2 1" length="0.0" source="-22189" cible="-22129"/>
+            <connection connecteur-source="1" connecteur-cible="0" points="3 2" length="0.0" source="-22189" cible="-22115"/>
+    </vanne-usage>
+    <vanne-usage identifiant="-22191" nom="X3" adresse="1-3-7" active="false" location="605 385">
+            <vanne-nf identifiant="-22192" version="-1" serie="10971">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+            <connection connecteur-source="0" connecteur-cible="1" points="2 1" length="0.0" source="-22191" cible="-22135"/>
+            <connection connecteur-source="1" connecteur-cible="0" points="3 2" length="0.0" source="-22191" cible="-22087"/>
+    </vanne-usage>
+    <vanne-usage identifiant="-22193" nom="X1" adresse="2-3-3" active="false" location="580 85">
+            <vanne-nf identifiant="-22194" version="-1" serie="20293">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+    </vanne-usage>
+    <source-usage identifiant="-22195" nom="H" debit="0.0" volume-restant="0.0" auto-remplissage="false" line-type="SILICONE_10L" location="925 15">
+            <source identifiant="-22196" version="-1" serie="20604" type="AIR_HAUT_DEBIT">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </source>
+            <connection connecteur-source="0" connecteur-cible="2" points="0 2" length="0.0" source="-22195" cible="-22209"/>
+    </source-usage>
+    <source-usage identifiant="-22197" nom="H" debit="0.0" volume-restant="0.0" auto-remplissage="false" line-type="SILICONE_10L" location="285 15">
+            <source identifiant="-22198" version="-1" serie="20608" type="AIR_HAUT_DEBIT">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </source>
+            <connection connecteur-source="0" connecteur-cible="0" points="1 0" length="0.0" source="-22197" cible="-22203"/>
+    </source-usage>
+    <vanne-usage identifiant="-22199" nom="X41" adresse="0-0-0" active="false" location="490 -20">
+            <vanne-nf identifiant="-22200" version="-1" serie="20609">
+                    <modele identifiant="22" nom="Manual clamp" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+            <connection connecteur-source="0" connecteur-cible="1" points="0 1" length="0.0" source="-22199" cible="-22203"/>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 0" length="0.0" source="-22199" cible="-22211"/>
+    </vanne-usage>
+    <vanne-usage identifiant="-22201" nom="X4" adresse="2-3-6" active="false" location="605 -45">
+            <vanne-nf identifiant="-22202" version="-1" serie="20611">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+            <connection connecteur-source="0" connecteur-cible="0" points="2 3" length="0.0" source="-22201" cible="-22205"/>
+            <connection connecteur-source="1" connecteur-cible="1" points="3 1" length="0.0" source="-22201" cible="-22211"/>
+    </vanne-usage>
+    <jonction-usage identifiant="-22203" nom="T" orientation="1" location="315 15">
+            <jonction identifiant="-22204" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="0" connecteur-cible="0" points="0 1" length="0.0" source="-22203" cible="-22197"/>
+            <connection connecteur-source="1" connecteur-cible="0" points="1 0" length="0.0" source="-22203" cible="-22199"/>
+            <connection connecteur-source="2" connecteur-cible="0" points="2 0" length="0.0" source="-22203" cible="-22063"/>
+    </jonction-usage>
+    <source-usage identifiant="-22205" nom="H" debit="0.0" volume-restant="0.0" auto-remplissage="false" line-type="SILICONE_10L" location="605 -75">
+            <source identifiant="-22206" version="-1" serie="20618" type="AIR_HAUT_DEBIT">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </source>
+            <connection connecteur-source="0" connecteur-cible="0" points="3 2" length="0.0" source="-22205" cible="-22201"/>
+    </source-usage>
+    <vanne-usage identifiant="-22207" nom="X42" adresse="0-0-0" active="false" location="725 -20">
+            <vanne-nf identifiant="-22208" version="-1" serie="20619">
+                    <modele identifiant="22" nom="Manual clamp" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+            <connection connecteur-source="0" connecteur-cible="2" points="0 2" length="0.0" source="-22207" cible="-22211"/>
+            <connection connecteur-source="1" connecteur-cible="1" points="1 1" length="0.0" source="-22207" cible="-22209"/>
+    </vanne-usage>
+    <jonction-usage identifiant="-22209" nom="T" orientation="1" location="890 15">
+            <jonction identifiant="-22210" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="2" connecteur-cible="0" points="2 0" length="0.0" source="-22209" cible="-22195"/>
+            <connection connecteur-source="1" connecteur-cible="1" points="1 1" length="0.0" source="-22209" cible="-22207"/>
+            <connection connecteur-source="0" connecteur-cible="1" points="0 1" length="0.0" source="-22209" cible="-22147"/>
+    </jonction-usage>
+    <jonction-usage identifiant="-22211" nom="T" orientation="1" location="605 -20">
+            <jonction identifiant="-22212" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </jonction>
+            <connection connecteur-source="1" connecteur-cible="1" points="1 3" length="0.0" source="-22211" cible="-22201"/>
+            <connection connecteur-source="2" connecteur-cible="0" points="2 0" length="0.0" source="-22211" cible="-22207"/>
+            <connection connecteur-source="0" connecteur-cible="1" points="0 1" length="0.0" source="-22211" cible="-22199"/>
+    </jonction-usage>
+    <vanne-usage identifiant="-22213" nom="X05" adresse="2-0-2" active="false" location="660 380">
+            <vanne-nf identifiant="-22214" version="-1" serie="20623">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+    </vanne-usage>
+    <aiguillage-usage identifiant="-22215" nom="A1" orientation="1" adresse="2-3-4" defaultOutlet="0" active="false" location="515 680">
+            <aiguillage identifiant="-22216" version="-1" serie="21882">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </aiguillage>
+            <connection connecteur-source="1" connecteur-cible="3" points="1 3" length="0.0" source="-22215" cible="-22217"/>
+            <connection connecteur-source="0" connecteur-cible="1" points="0 1" length="0.0" source="-22215" cible="-22163"/>
+            <connection connecteur-source="2" connecteur-cible="0" points="2 0" length="0.0" source="-22215" cible="-22165"/>
+    </aiguillage-usage>
+    <evacuation-usage identifiant="-22217" nom="W" location="545 650">
+            <evacuation identifiant="-22218" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </evacuation>
+            <connection connecteur-source="3" connecteur-cible="1" points="3 1" length="0.0" source="-22217" cible="-22215"/>
+    </evacuation-usage>
+    <evacuation-usage identifiant="-22219" nom="W" location="650 735">
+            <evacuation identifiant="-22220" version="-1" serie="0">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </evacuation>
+            <connection connecteur-source="2" connecteur-cible="1" points="2 1" length="0.0" source="-22219" cible="-22221"/>
+    </evacuation-usage>
+    <aiguillage-usage identifiant="-22221" nom="A2" orientation="4" adresse="2-3-5" defaultOutlet="0" active="false" location="620 680">
+            <aiguillage identifiant="-22222" version="-1" serie="21888">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </aiguillage>
+            <connection connecteur-source="1" connecteur-cible="2" points="1 2" length="0.0" source="-22221" cible="-22219"/>
+            <connection connecteur-source="0" connecteur-cible="0" points="0 0" length="0.0" source="-22221" cible="-22173"/>
+            <connection connecteur-source="2" connecteur-cible="1" points="2 1" length="0.0" source="-22221" cible="-22167"/>
+    </aiguillage-usage>
+    <source-usage identifiant="-22223" nom="O" debit="2.5" volume-restant="5200.0" auto-remplissage="false" line-type="SILICONE_10L" location="665 415" control-valve="-22213">
+            <source identifiant="-22224" version="-1" serie="" type="OXYDANT">
+                    <modele identifiant="4" nom="Non defini" class="bio.anode.ale.core.composant.Composant"/>
+            </source>
+            <pressuremetre-usage identifiant="-22225" nom="Pressure sensor for oxydant tank" adresse="/dev/ttyUSB-P3;57600;10;20" accessible="true" frequence-de-mise-a-jour="1000" sensibilite="2.0" alerte="0.0" mesure="312.8" derniere-mesure="2025-06-23 19:58:18.677 +0200" delta-erreur="0.0" installed="true">
+                    <pressuremetre identifiant="-22226" version="0" serie="10324" connecteur="fr.cns.laferme.control.connector.arduino.HWPressureConnector" unite="mb">
+                            <modele identifiant="41" nom="HW Pressure sensor" default-connector="fr.cns.laferme.control.connector.arduino.HWPressureConnector" class="bio.anode.ale.core.composant.Pressuremetre"/>
+                    </pressuremetre>
+            </pressuremetre-usage>
+    </source-usage>
+    <vanne-usage identifiant="-22227" nom="X5" adresse="1-0-2" active="false" location="595 495">
+            <vanne-nf identifiant="-22228" version="-1" serie="21902">
+                    <modele identifiant="11" nom="Biochem" class="bio.anode.ale.core.composant.Electrovanne"/>
+            </vanne-nf>
+    </vanne-usage>
+</topologie>
