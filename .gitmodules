@@ -1,0 +1,6 @@
+[submodule "workflow"]
+	path = workflow
+	url = git@github.com:A-N-O-D-E-R/workflow.git
+[submodule "tools"]
+	path = tools
+	url = git@github.com:A-N-O-D-E-R/tools.git
