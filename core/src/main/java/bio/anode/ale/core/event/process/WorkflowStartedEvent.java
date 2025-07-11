@@ -1,6 +1,6 @@
 package bio.anode.ale.core.event.process;
 
-import bio.anode.ale.core.event.Event;
+import com.anode.tool.event.Event;
 
 public class WorkflowStartedEvent extends ProcessEvent {
 

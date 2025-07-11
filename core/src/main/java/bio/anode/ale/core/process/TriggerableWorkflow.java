@@ -26,5 +26,4 @@ public class TriggerableWorkflow implements Persistable{
 	private int priorite;
 	private boolean internal = false;
     private Operation definition;
-
 }

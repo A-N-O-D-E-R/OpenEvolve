@@ -1,5 +1,7 @@
 package bio.anode.ale.core.event;
 
+import com.anode.tool.event.Event;
+
 public class CommunicationErrorEvent extends Event{
 
     @Override

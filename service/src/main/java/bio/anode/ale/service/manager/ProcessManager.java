@@ -2,16 +2,25 @@ package bio.anode.ale.service.manager;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.Date;
 import java.util.List;
 
 import bio.anode.ale.core.culture.Culture;
+import bio.anode.ale.core.exception.CalibrationException;
+import bio.anode.ale.core.exception.CommunicationException;
 import bio.anode.ale.core.exception.ConnectorInstanciationException;
+import bio.anode.ale.core.exception.FluidicProcessorException;
+import bio.anode.ale.core.exception.MalformedAddressException;
+import bio.anode.ale.core.filter.process.TriggerableWorkflowFilter;
 import bio.anode.ale.core.process.CultivationMode;
 import bio.anode.ale.core.process.TriggerableWorkflow;
+import bio.anode.ale.core.specifications.Media;
 import bio.anode.ale.core.specifications.Operator;
 import bio.anode.ale.core.specifications.Planning;
 import bio.anode.ale.core.usage.fluidic.IntakeUsage;
+import bio.anode.ale.core.view.ExecutionContexteView;
+import bio.anode.ale.core.view.Refilling;
 import bio.anode.ale.service.MediaService;
 import  bio.anode.ale.service.OperatorService;
 
@@ -20,7 +29,7 @@ public interface ProcessManager  extends OperatorService, MediaService {
     public Process getProcess();
 
 	public void setProcess(Process process)
-			throws IllegalStateException, CommunicationException, ConnectorInstanciationException, ParseException, MalformedAddressException, ProcesseurFluidiqueException;
+			throws IllegalStateException, CommunicationException, ConnectorInstanciationException, ParseException, MalformedAddressException, FluidicProcessorException;
 
 	public void unsetProtocole() throws IllegalStateException;
 
@@ -103,7 +112,7 @@ public interface ProcessManager  extends OperatorService, MediaService {
 	public void updateMediaFromStrings(List<String> mediaAsString);
 
 	@Override
-	public Medium getMedium(String code);
+	public Media getMedium(String code);
 
 	@Override
 	public List<Operator> getOperators();

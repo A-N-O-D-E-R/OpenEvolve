@@ -12,22 +12,22 @@ import bio.anode.ale.core.usage.EmbededComputeUsage;
 import bio.anode.ale.core.usage.actuator.ActuatorUsage;
 import bio.anode.ale.core.usage.regulator.RegulatorUsage;
 import bio.anode.ale.core.usage.sensor.SensorUsage;
-import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 /*
  * This is the root component, it describe all the Hardware component and usage 
  */
 @Getter
 @Setter
 @EqualsAndHashCode(callSuper = true)
-public class Hardware extends Component implements Serializable{
+public class Hardware extends Component implements Serializable {
+
     public Hardware(UUID id, Model model, String serialNumber, int version) {
         super(id, model, serialNumber, version);
-        //TODO Auto-generated constructor stub
     }
+
     private String name;
     private Date deployementDate;
     private BuildVersion build;
@@ -38,4 +38,3 @@ public class Hardware extends Component implements Serializable{
     private Collection<RegulatorUsage> regulatorUsages;
 
 }
-

@@ -2,9 +2,9 @@ package bio.anode.ale.service;
 
 import java.util.List;
 
+import com.anode.tool.event.Event;
+import com.anode.tool.event.Filter;
 import com.anode.tool.service.CommonService;
-
-import bio.anode.ale.core.event.Event;
 
 public interface EventService extends CommonService{
     /**

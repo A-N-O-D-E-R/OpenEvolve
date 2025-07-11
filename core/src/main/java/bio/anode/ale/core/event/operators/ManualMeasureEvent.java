@@ -1,6 +1,7 @@
 package bio.anode.ale.core.event.operators;
 
-import bio.anode.ale.core.event.Event;
+import com.anode.tool.event.Event;
+
 import bio.anode.ale.core.usage.fluidic.IntakeUsage;
 import jakarta.persistence.Column;
 import jakarta.persistence.ManyToOne;

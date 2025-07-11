@@ -1,8 +1,14 @@
 package bio.anode.ale.service.schedule;
 
+import java.text.ParseException;
+import java.util.Date;
+import java.util.List;
+
 import org.quartz.Job;
 
+import bio.anode.ale.core.filter.process.TriggerableWorkflowFilter;
 import bio.anode.ale.core.process.TriggerableWorkflow;
+import bio.anode.ale.core.specifications.Planning;
 
 public interface SchedulerService {
     public void load(Process protocole) throws ParseException ;
@@ -15,7 +21,7 @@ public interface SchedulerService {
 
     public List<Planning> getPlanning(Date until, TriggerableWorkflowFilter filter);
     
-    public Date getProchainDeclenchement(TriggerableWorkflow tache) ;
+    public Date getNextTriggerDate(TriggerableWorkflow tache) ;
     
     public List<Date> getTriggers(TriggerableWorkflow tache, Date from, Date to) ;
     
