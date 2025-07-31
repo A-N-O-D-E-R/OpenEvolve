@@ -6,14 +6,18 @@
 	<groupId>bio.anode.ale</groupId>
 	<artifactId>back</artifactId>
 	<version>0.0.1</version>
+
     <properties>
-        <slf4j.version>2.0.9</slf4j.version>
-        <logback.version>1.3.0-alpha16</logback.version>
-         <!-- gRPC related dependencies -->
-         <grpc.version>1.61.1</grpc.version>
-         <protobuf.version>3.25.1</protobuf.version>
-         <protoc.maven.version>3.11.4</protoc.maven.version>
-    </properties>
+         <maven.compiler.release>17</maven.compiler.release>
+         <maven.compiler.source>17</maven.compiler.source>
+         <maven.compiler.target>17</maven.compiler.target>
+	</properties>
+
+    <parent>
+		<groupId>bio.anode</groupId>
+		<artifactId>ale</artifactId>
+		<version>0.0.1</version>
+	</parent>
 
     <repositories>
         <repository>
@@ -32,8 +36,19 @@
         </repository>
     </repositories>
 
-
     <dependencies>
+        <dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+        <dependency>
+			<groupId>bio.anode.ale</groupId>
+			<artifactId>core</artifactId>
+		</dependency>
+        <dependency>
+			<groupId>bio.anode.ale</groupId>
+			<artifactId>service</artifactId>
+		</dependency>
                 <!-- gRPC/Protobuf -->
                 <dependency>
                     <groupId>com.google.protobuf</groupId>
@@ -90,17 +105,29 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>bio.anode.sila</groupId>
-                <artifactId>plugin</artifactId>
+                <groupId>net.revelc.code</groupId>
+                <artifactId>impsort-maven-plugin</artifactId>
+                <version>1.6.2</version>
+                <dependencies>
+                  <dependency>
+                    <groupId>org.codehaus.plexus</groupId>
+                    <artifactId>plexus-utils</artifactId>
+                    <version>3.5.1</version>
+                  </dependency>
+                </dependencies>
+              </plugin>
+            <plugin>
+                <groupId>org.sila-standard.sila_java.library</groupId>
+                <artifactId>maven_plugin</artifactId>
                 <version>0.14.0</version>
                 <executions>
                     <execution>
                         <goals>
-                            <goal>run</goal>
+                            <goal>compile</goal>
                         </goals>
                         <configuration>
                             <features>
-                                <param>${build.resource.dir}/GreetingProvider-v1_0.sila.xml</param>
+                                <param>${project.basedir}/src/main/resources/GreetingProvider-v1_0.sila.xml</param>
                             </features>
                         </configuration>
                     </execution>

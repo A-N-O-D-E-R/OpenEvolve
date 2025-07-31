@@ -12,7 +12,12 @@ import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 import java.util.Properties;
 
+import bio.anode.ale.back.event.EventHistorySingleton;
+import bio.anode.ale.back.event.EventManagerSingleton;
+import bio.anode.ale.back.hardware.HardwareMangerSingleton;
+import bio.anode.ale.back.process.ProcessManagerSingleton;
 import bio.anode.ale.back.server.LabEvolveSilaServer;
+import bio.anode.ale.core.exception.FluidicProcessorException;
 import lombok.extern.slf4j.Slf4j;
 import sila_java.library.server_base.utils.ArgumentHelper;
 
@@ -60,7 +65,7 @@ public class Application {
 				
 				startManagers();
 
-				server =new LabEvolveSilaServer(args);
+				//server =new LabEvolveSilaServer(args);
 				log.info("system started");
 			} catch (Throwable throwable) {
 				log.error("Failed to initialize : stopped.", throwable);
@@ -69,7 +74,7 @@ public class Application {
 		}
 	}
 
-	private void startManagers() throws IllegalStateException, ProcesseurFluidiqueException {
+	private void startManagers() throws IllegalStateException, FluidicProcessorException {
 		try {
 			EventManagerSingleton.getInstance().start();
 		} catch (Throwable e) {
@@ -77,8 +82,8 @@ public class Application {
 		}
 
 		try {
-			RobotManagerSingleton.getInstance().start();
-		} catch (ProcesseurFluidiqueException e) {
+			HardwareMangerSingleton.getInstance().start();
+		} catch (FluidicProcessorException e) {
 			log.error("While starting robot manager  : ", e);
 			throw e ;
 		} catch (Throwable e) {
@@ -86,8 +91,8 @@ public class Application {
 		}
 
 		try {
-			ProtocoleManagerSingleton.getInstance().start();
-		} catch (ProcesseurFluidiqueException e) {
+			ProcessManagerSingleton.getInstance().start();
+		} catch (FluidicProcessorException e) {
 			log.error("While starting protocole manager  : ", e);
 			throw e ;	
 		} catch (Throwable e) {

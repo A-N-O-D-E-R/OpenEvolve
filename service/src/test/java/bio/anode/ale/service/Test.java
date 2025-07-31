@@ -17,7 +17,7 @@ public class Test implements AbstractTopologyTest {
         usages.addAll(generatedTrapUsages());
         usages.addAll(generatedValveUsages());
         handleConnection(usages);
-       usages.stream().filter(usage -> !(usage.isCompletelyConnected())).forEach(usage -> System.out.println(usage.getName()+"  current connections: "+((AbstractFluidicUsage)usage).getConnections().size()+" on :"+((FluidicComponant) usage.getComponent()).getConnectorCount()));
+       usages.stream().filter(usage -> !(usage.isCompletelyConnected())).forEach(usage -> System.out.println(usage.getName()+"  current connections: "+((AbstractFluidicUsage)usage).getConnections().size()+" on "+((FluidicComponant) usage.getComponent()).getConnectorCount()));
     }
 
     public static void main(String[] args){

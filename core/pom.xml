@@ -11,6 +11,11 @@
 		<artifactId>ale</artifactId>
 		<version>0.0.1</version>
 	</parent>
+	<properties>
+		<maven.compiler.release>17</maven.compiler.release>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -36,6 +41,5 @@
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-core</artifactId>
 		</dependency>
-
 	</dependencies>
 </project>

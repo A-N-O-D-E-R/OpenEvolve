@@ -11,6 +11,11 @@
     <properties>
         <slf4j.version>2.0.9</slf4j.version>
         <logback.version>1.3.0-alpha16</logback.version>
+        <grpc.version>1.61.1</grpc.version>
+        <protobuf.version>3.25.1</protobuf.version>
+        <protoc.maven.version>3.11.4</protoc.maven.version>
+        <slf4j.version>2.0.9</slf4j.version>
+        <logback.version>1.3.0-alpha16</logback.version>
         <maven.compiler.release>17</maven.compiler.release>
     </properties>
 
@@ -19,6 +24,7 @@
         <module>workflow</module>
         <module>core</module>
         <module>service</module>
+        <module>back</module>
     </modules>
     
     <dependencyManagement>
@@ -70,6 +76,11 @@
                 <artifactId>core</artifactId>
                 <version>0.0.1</version>
             </dependency>
+            <dependency>
+                <groupId>bio.anode.ale</groupId>
+                <artifactId>service</artifactId>
+                <version>0.0.1</version>
+            </dependency>
             <!-- TEST -->
             <dependency>
                 <groupId>org.junit.jupiter</groupId>
@@ -111,6 +122,41 @@
                 <version>5.2.0</version>
                 <scope>test</scope>
             </dependency>    
+            <dependency>
+                <groupId>org.twdata.maven</groupId>
+                <artifactId>mojo-executor</artifactId>
+                <version>2.4.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.os72</groupId>
+                <artifactId>protoc-jar-maven-plugin</artifactId>
+                <version>${protoc.maven.version}</version>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>com.google.protobuf</groupId>
+                <artifactId>protoc</artifactId>
+                <version>${protobuf.version}</version>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>protoc-gen-grpc-java</artifactId>
+                <version>${grpc.version}</version>
+                <type>pom</type>
+            </dependency>
+
+             <!-- SiLA Dependencies -->
+            <dependency>
+                <groupId>org.sila-standard.sila_java.library</groupId>
+                <artifactId>sila_base</artifactId>
+                <version>0.14.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.sila-standard.sila_java.library</groupId>
+                <artifactId>core</artifactId>
+                <version>0.14.0</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>
