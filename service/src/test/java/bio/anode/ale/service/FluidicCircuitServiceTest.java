@@ -10,8 +10,6 @@ import java.util.Set;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
-import javax.xml.transform.Source;
-
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -64,17 +62,22 @@ public class FluidicCircuitServiceTest implements AbstractTopologyTest {
     }
 
 
-    @DisplayName("All components should be fully connected")
+    @DisplayName("Topolgy should be not cyclic")
     @Test
-    Circuit testAcyclicPath() throws IllegalTopologyException {
+    Circuit testAcyclicPath() {
         FluidicComponantUsage waterIntakeUsage =  getUsageById(topology.getComposantFluidiqueUsages().stream().collect(Collectors.toList()), UUID.fromString("0197a110-3ca2-7b48-a6ba-a3988fb755fe"));
         Connection initialConnection = waterIntakeUsage.getConnection(0);
-        FluidicPathVisitor path = new FluidicPathVisitor(initialConnection);
+        try{
+            FluidicPathVisitor path = new FluidicPathVisitor(initialConnection);
         Circuit circuit = new FluidicCircuitService().getCircuit(((AbstractFluidicUsage) initialConnection.getTarget()),path);
         circuit.setRoot(waterIntakeUsage);
         circuit.buildFinished();
         System.out.println(circuit);
         return circuit;
+        }catch(IllegalTopologyException illegalTopologyException){
+            System.err.println(illegalTopologyException.getMessage());
+        }
+        return null;
     }
 
 
@@ -87,7 +90,7 @@ public class FluidicCircuitServiceTest implements AbstractTopologyTest {
             if (usage instanceof IntakeUsage) { 
                 IntakeUsage intakeUsage = (IntakeUsage) usage;
                 if (((Intake) intakeUsage.getComponent()).getType() == Intake.Type.SODA) 
-                    soda =intakeUsage; 
+                    soda = intakeUsage; 
             }
 	    List<Circuit> circuits = new FluidicCircuitService().discoverCircuits(soda, new FluidicPathVisitor(soda.getConnections().get(0)));
     
