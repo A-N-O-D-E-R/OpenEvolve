@@ -25,11 +25,12 @@ public class FluidicPathVisitor {
 	public void forward(Connection connection) throws IllegalTopologyException {
 		// TODO : revoir l'algorithme pour supprimer le lien specifique vers
 		// AiguillageUsage
+		System.out.println(visitedComposantFluidiqueUsageIds);
 		if (!visitedComposantFluidiqueUsageIds.add(connection.getTarget().getId()))
 			if (!(connection.getTarget() instanceof DiverterUsage) || ((DiverterUsage) connection.getTarget()).getNextConnection(connection.getTargetConnector()) != null) {
 				cyclic=true;
 				log.error(fullPathToString());
-				throw new IllegalTopologyException("Cycle trouve a partir de " + connection.getTarget().getName() + " " + connection.getTarget().getId());
+				throw new IllegalTopologyException("Cycle trouve a partir de " + connection.getTarget().getName() + " " + connection.getTarget().getId()+"\n"+visitedComposantFluidiqueUsageIds);
 			}
 
 		followedPath.push(connection);

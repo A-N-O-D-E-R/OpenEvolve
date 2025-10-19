@@ -1,0 +1,8 @@
+version: '3'
+
+tasks:
+  install:
+    cmds:
+      - git submodule init
+      - git submodule update
+      - mvn clean install
