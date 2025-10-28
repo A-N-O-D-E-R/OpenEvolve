@@ -17,6 +17,6 @@ import lombok.Setter;
 @AllArgsConstructor
 @EqualsAndHashCode
 public class FluidicTopology implements Persistable, Serializable  {
-    private UUID id;
+    private Serializable id;
     private Collection<FluidicComponantUsage> composantFluidiqueUsages = new LinkedList<>() ;
 }

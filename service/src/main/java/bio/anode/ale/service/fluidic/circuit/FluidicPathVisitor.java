@@ -1,5 +1,6 @@
 package bio.anode.ale.service.fluidic.circuit;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Stack;
@@ -15,17 +16,17 @@ import lombok.extern.slf4j.Slf4j;
 public class FluidicPathVisitor {
     private Stack<Connection> followedPath = new Stack<Connection>();
     private boolean cyclic;
-	private Set<UUID> visitedComposantFluidiqueUsageIds = new HashSet<UUID>();
+	private Set<Serializable> visitedComposantFluidiqueUsageIds = new HashSet<Serializable>();
 
 	public FluidicPathVisitor(Connection initialConnection) throws IllegalTopologyException {
 		cyclic=false;
+		visitedComposantFluidiqueUsageIds.add(initialConnection.getRoot().getId());
         forward(initialConnection);
 	}
 
 	public void forward(Connection connection) throws IllegalTopologyException {
 		// TODO : revoir l'algorithme pour supprimer le lien specifique vers
 		// AiguillageUsage
-		System.out.println(visitedComposantFluidiqueUsageIds);
 		if (!visitedComposantFluidiqueUsageIds.add(connection.getTarget().getId()))
 			if (!(connection.getTarget() instanceof DiverterUsage) || ((DiverterUsage) connection.getTarget()).getNextConnection(connection.getTargetConnector()) != null) {
 				cyclic=true;

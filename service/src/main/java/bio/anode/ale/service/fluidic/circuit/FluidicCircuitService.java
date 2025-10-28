@@ -22,6 +22,9 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class FluidicCircuitService {
 
+	public List<Circuit> discoverCircuitsFrom(AbstractFluidicUsage usage) throws IllegalTopologyException{
+		return new FluidicCircuitService().discoverCircuits((AbstractFluidicUsage) usage.getConnections().get(0).getTarget(), new FluidicPathVisitor(usage.getConnections().get(0)));
+	}
     
     public Circuit getCircuit(AbstractFluidicUsage usage, FluidicPathVisitor followedPath) throws IllegalTopologyException {
         if(usage instanceof ValveUsage valveUsage ){
@@ -77,7 +80,8 @@ public class FluidicCircuitService {
 		Connection lastConnectionFollowed = followedPath.getCurrentPosition() ;
 		Circuit circuit = null;
 		for (Connection connection : usage.getConnections()) {
-			if (connection.getTarget() != lastConnectionFollowed.getRoot()) {
+			log.debug(connection.getTarget().getName()+"!="+lastConnectionFollowed.getRoot().getName());
+			if (connection.getTarget() != lastConnectionFollowed.getTarget()) {
 				followedPath.forward(connection);
 				try{
 					usage.getCircuits().add(circuit = getCircuit(((AbstractFluidicUsage) connection.getTarget()),followedPath));
@@ -113,29 +117,24 @@ public class FluidicCircuitService {
 
 		for (Connection connection : usage.getConnections()) {
 			if (connection.getTarget() != lastConnectionFollowed.getRoot()) {
-
 				try {
 					followedPath.forward(connection);
-
 					for (Circuit circuit : discoverCircuits(((AbstractFluidicUsage) connection.getTarget()),followedPath)) {
 						circuit.setRoot(usage);
 						try {
 							followedPath.backward() ;
 							completeClosure(usage,lastConnectionFollowed, circuit, followedPath);
 							circuits.add(circuit);
-
 						} catch (IllegalTopologyException e) {
-							log.debug("Illegal topology :",e);
+							log.debug("Illegal topology :",e.getMessage());
 						}finally{
 							followedPath.forward(connection);
 						}
 					}
-
 					followedPath.backward() ;
 				} catch (IllegalTopologyException e) {
-					log.debug("Illegal topology :",e);
+					log.debug("Illegal topology :",e.getMessage());
 				}
-
 			}
 		}
 		return circuits;

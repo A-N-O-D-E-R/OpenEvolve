@@ -1,6 +1,7 @@
 package bio.anode.ale.core.usage;
 
 import java.beans.Transient;
+import java.io.Serializable;
 import java.util.List;
 import java.util.UUID;
 
@@ -13,7 +14,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class AbstractUsage implements ComponentUsage {
-    private UUID id;
+    private Serializable id;
     private Component component ;
     private transient int version;
 	private String name ;

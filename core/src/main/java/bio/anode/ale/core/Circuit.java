@@ -8,6 +8,7 @@ import com.anode.tool.graph.Node;
 
 import bio.anode.ale.core.usage.AbstractUsage;
 import bio.anode.ale.core.usage.fluidic.AbstractFluidicUsage;
+import bio.anode.ale.core.usage.fluidic.ChamberUsage;
 import bio.anode.ale.core.usage.fluidic.Connection;
 import bio.anode.ale.core.usage.fluidic.EvacuationUsage;
 import bio.anode.ale.core.usage.fluidic.FluidicComponantUsage;
@@ -30,6 +31,8 @@ public class Circuit {
 	private double weight;
 
 	private double tubeLength;
+
+	private int numberOfChamber;
 
 	private boolean computedMetrics = false ;
 
@@ -75,7 +78,7 @@ public class Circuit {
 	private void computeMetrics() {		
 		weight = 0;
 		tubeLength = 0;
-		
+		numberOfChamber=0;
 		computeMetrics(root) ;
 		
 		weight = Math.round(weight * 10) / 10d;		
@@ -84,12 +87,11 @@ public class Circuit {
 	
 	private void computeMetrics(Node<FluidicComponantUsage> node) {
 		weight += node.getContent().getCurrentVolume();
-
+		numberOfChamber += (node.getContent() instanceof ChamberUsage)?1:0;
 		for (int i = 0; i < node.getChildrenCount(); i++) {
 			Node<FluidicComponantUsage> childNode = node.getChild(i);
 
 			if (childNode.getAttribute(REACHABLE_PATH) == Boolean.TRUE) {
-
 				for (Connection connection : ((AbstractFluidicUsage) node.getContent()).getConnections())
 					if (connection.getTarget() == childNode.getContent()) {
 						tubeLength += connection.getLength();
@@ -157,8 +159,9 @@ public class Circuit {
 	}
 
     public int getChamberCount() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getChamberCount'");
+		if (!computedMetrics)
+			computeMetrics() ;
+		return numberOfChamber;
     }
 
 }

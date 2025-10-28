@@ -17,7 +17,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @EqualsAndHashCode
 public abstract class Component implements Serializable, Persistable {
-    private UUID id;
+    private Serializable id;
     private Model model;
     private String serialNumber;
     private int version;

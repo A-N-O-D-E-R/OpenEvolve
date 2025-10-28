@@ -26,7 +26,7 @@ import bio.anode.ale.service.manager.ProcessManager;
 public class SQLightProcessManagerImpl implements ProcessManager {
 
     @Override
-    public List<String> exportOperatorsToCSV(String var1) {
+    public List<String> exportOperatorsToCSV(String code) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'exportOperatorsToCSV'");
     }

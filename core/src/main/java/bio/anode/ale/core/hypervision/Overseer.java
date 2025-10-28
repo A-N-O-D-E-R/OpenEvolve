@@ -1,5 +1,6 @@
 package bio.anode.ale.core.hypervision;
 
+import java.io.Serializable;
 import java.util.UUID;
 
 import com.anode.tool.event.EventManager;
@@ -15,7 +16,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Overseer implements Persistable {
-    private UUID id;
+    private Serializable id;
     private String name ;
 	private char[] code ;
     private int priorite ;

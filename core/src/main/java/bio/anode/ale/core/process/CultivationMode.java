@@ -3,8 +3,6 @@ package bio.anode.ale.core.process;
 import java.util.LinkedList;
 import java.util.List;
 
-import com.anode.workflow.entities.workflows.WorkflowDefinition;
-
 import bio.anode.ale.core.capability.TemperatureRegulation;
 import bio.anode.ale.core.hypervision.Overseer;
 import bio.anode.ale.core.usage.fluidic.ChamberUsage;

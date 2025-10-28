@@ -38,7 +38,7 @@ public class FluidicStep extends BasicAleStep{
 	}
 
     public boolean isActivated(ValveUsage vanneUsage) {
-		UUID vanneId = vanneUsage.getId() ;
+		Serializable vanneId = vanneUsage.getId() ;
 
 		for(ValveUsage activatedValve : getActivations()) {
 			if (activatedValve.getId().equals(vanneId)) {

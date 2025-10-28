@@ -1,5 +1,6 @@
 package bio.anode.ale.core.specifications;
 
+import java.io.Serializable;
 import java.util.UUID;
 
 import com.anode.tool.persistance.Persistable;
@@ -10,7 +11,7 @@ import lombok.Setter;
 @Setter
 public class Supplier implements Persistable {
     
-    private UUID id;
+    private Serializable id;
     private String name;
 
     public enum Type{

@@ -1,5 +1,6 @@
 package bio.anode.ale.core.process.condition;
 
+import java.io.Serializable;
 import java.util.UUID;
 
 import lombok.Getter;
@@ -8,7 +9,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class BooleanCondition implements Condition {
-    private UUID id;
+    private Serializable id;
     private boolean fulfield  = true ;
 
     public boolean conditionRemplie() {

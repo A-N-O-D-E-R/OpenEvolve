@@ -1,5 +1,6 @@
 package bio.anode.ale.core.process.condition;
 
+import java.io.Serializable;
 import java.util.UUID;
 
 import bio.anode.ale.core.usage.sensor.SensorUsage;
@@ -10,7 +11,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class ConditionOnThreshold implements Condition {
-    private UUID id;
+    private Serializable id;
     private double threshold;
 	private int delayInMinutes = 0; 
 	private boolean superior = false;
