@@ -1,5 +1,6 @@
 package bio.anode.ale.core.specifications;
 
+import java.io.Serializable;
 import java.util.UUID;
 
 import com.anode.tool.persistance.Persistable;
@@ -12,7 +13,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class Model implements Persistable {
-    private UUID id;
+    private Serializable id;
     private String name;
     private String supplierReference;
     private Supplier supplier;

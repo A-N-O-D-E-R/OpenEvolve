@@ -10,7 +10,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Media implements Serializable,Persistable {
-    private UUID id;
+    private Serializable id;
     private String code;
 	private String alternativeCode = "";
 	private String label = "";

@@ -4,10 +4,9 @@ import java.io.Externalizable;
 import java.io.IOException;
 import java.io.ObjectInput;
 import java.io.ObjectOutput;
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.UUID;
-
 import com.anode.tool.persistance.Persistable;
 
 import bio.anode.ale.core.process.CultivationMode;
@@ -19,7 +18,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Culture implements Persistable {
-    private UUID id;
+    private Serializable id;
     private State state =State.IDLE;
     private int version;
 	private String nom;

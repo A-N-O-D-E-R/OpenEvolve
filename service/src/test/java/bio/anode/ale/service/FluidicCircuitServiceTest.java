@@ -11,6 +11,7 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
@@ -64,20 +65,17 @@ public class FluidicCircuitServiceTest implements AbstractTopologyTest {
 
     @DisplayName("Topolgy should be not cyclic")
     @Test
-    Circuit testAcyclicPath() {
-        FluidicComponantUsage waterIntakeUsage =  getUsageById(topology.getComposantFluidiqueUsages().stream().collect(Collectors.toList()), UUID.fromString("0197a110-3ca2-7b48-a6ba-a3988fb755fe"));
-        Connection initialConnection = waterIntakeUsage.getConnection(0);
-        try{
+    Circuit testAcyclicPath() throws IllegalTopologyException{
+        FluidicComponantUsage mediaOneIntakeUsage =  getUsageById(topology.getComposantFluidiqueUsages().stream().collect(Collectors.toList()), UUID.fromString("0197a111-ed96-77cc-8d6e-506ca50491ef"));
+        Connection initialConnection = mediaOneIntakeUsage.getConnection(0);
+
             FluidicPathVisitor path = new FluidicPathVisitor(initialConnection);
-        Circuit circuit = new FluidicCircuitService().getCircuit(((AbstractFluidicUsage) initialConnection.getTarget()),path);
-        circuit.setRoot(waterIntakeUsage);
-        circuit.buildFinished();
-        System.out.println(circuit);
-        return circuit;
-        }catch(IllegalTopologyException illegalTopologyException){
-            System.err.println(illegalTopologyException.getMessage());
-        }
-        return null;
+            Circuit circuit = new FluidicCircuitService().getCircuit(((AbstractFluidicUsage) initialConnection.getTarget()),path);
+            circuit.setRoot(mediaOneIntakeUsage);
+            circuit.buildFinished();
+            System.out.println(circuit);
+            return circuit;
+
     }
 
 
@@ -92,16 +90,16 @@ public class FluidicCircuitServiceTest implements AbstractTopologyTest {
                 if (((Intake) intakeUsage.getComponent()).getType() == Intake.Type.SODA) 
                     soda = intakeUsage; 
             }
-	    List<Circuit> circuits = new FluidicCircuitService().discoverCircuits(soda, new FluidicPathVisitor(soda.getConnections().get(0)));
+	    List<Circuit> circuits = new FluidicCircuitService().discoverCircuitsFrom(soda);
     
         System.out.println(circuits.size() + " circuits trouves");
         
-        for (int i = 0; i < circuits.size(); i++) 
+        for (int i = 0; i < circuits.size(); i++)
             if(circuits.get(i).getChamberCount() > 1) 
                 circuits.remove(i--);
-        
+
         Set<Double> weights = new HashSet<Double>(); 
-        for (Circuit circuit : circuits) 
+        for (Circuit circuit : circuits)
             weights.add(circuit.getWeight());
         
         System.out.println(weights.size() + " poids differents"); 
@@ -116,7 +114,7 @@ public class FluidicCircuitServiceTest implements AbstractTopologyTest {
         for (Double length : lengths) 
             System.out.println(length); //
 
-        new FluidicCircuitService().getCircuit(soda, new FluidicPathVisitor(soda.getConnections().get(0)));
+        //new FluidicCircuitService().discoverCircuits((AbstractFluidicUsage) soda.getConnections().get(0).getTarget(), new FluidicPathVisitor(soda.getConnections().get(0)));
     }
     
     

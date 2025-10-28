@@ -11,7 +11,7 @@ public class Graph {
     private List<Data> nodes;
     private List<Data> edges;
 
-    public Graph(List<FluidicComponantUsage> topology ){
+    public Graph(List<FluidicComponantUsage> topology){
         nodes = new ArrayList<>();
         edges = new ArrayList<>();
         for(FluidicComponantUsage usage : topology){

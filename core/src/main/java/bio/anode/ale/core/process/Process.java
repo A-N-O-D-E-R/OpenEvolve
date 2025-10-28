@@ -4,6 +4,7 @@ import java.io.Externalizable;
 import java.io.IOException;
 import java.io.ObjectInput;
 import java.io.ObjectOutput;
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.UUID;
@@ -22,7 +23,7 @@ import lombok.Setter;
 @EqualsAndHashCode
 
 public class Process implements Persistable {
-    UUID id;
+    private Serializable id;
     private int version;
     private String name;
     private String build = "-";

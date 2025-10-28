@@ -1,14 +1,8 @@
 package bio.anode.ale.core.process;
 
-import java.io.Externalizable;
-import java.io.IOException;
-import java.io.ObjectInput;
-import java.io.ObjectOutput;
-import java.util.UUID;
+import java.io.Serializable;
 
 import com.anode.tool.persistance.Persistable;
-import com.anode.workflow.entities.workflows.WorkflowDefinition;
-
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,7 +13,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class TriggerableWorkflow implements Persistable{
-    UUID id;
+    Serializable id;
     private Integer identifiant;
 	private int version;
 	private String nom;

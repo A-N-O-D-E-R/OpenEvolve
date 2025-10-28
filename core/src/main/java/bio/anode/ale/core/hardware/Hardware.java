@@ -22,12 +22,11 @@ import lombok.Setter;
 @Getter
 @Setter
 @EqualsAndHashCode(callSuper = true)
-public class Hardware extends Component implements Serializable {
+public class Hardware extends Component  {
 
     public Hardware(UUID id, Model model, String serialNumber, int version) {
         super(id, model, serialNumber, version);
     }
-
     private String name;
     private Date deployementDate;
     private BuildVersion build;
