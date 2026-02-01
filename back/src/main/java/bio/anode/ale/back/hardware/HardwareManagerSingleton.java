@@ -2,7 +2,6 @@ package bio.anode.ale.back.hardware;
 
 import bio.anode.ale.service.manager.HardwareManger;
 
-public class HardwareMangerSingleton {
-
+public class HardwareManagerSingleton {
     HardwareManger instance;
 }
